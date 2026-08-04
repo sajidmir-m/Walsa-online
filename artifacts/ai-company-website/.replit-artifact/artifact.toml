@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "AI & Digital Transformation Company Website"
+description = "An award-worthy, ultra-premium landing page for a full-service AI & Digital Transformation company. Features cinematic scroll animations, 3D visuals, glassmorphism, and 17 richly designed sections showcasing AI services, software development, training programs, digital marketing, portfolio, testimonials, pricing, and contact. Built for Awwwards-level quality."
+version = "1.0.0"
+id = "artifacts/ai-company-website"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18426
+
+[services.development]
+run = "pnpm --filter @workspace/ai-company-website run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ai-company-website", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ai-company-website/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18426"
+BASE_PATH = "/"

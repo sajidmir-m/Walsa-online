@@ -1,0 +1,589 @@
+You are the world's best Creative Director, Product Designer, UX Researcher, Motion Designer, Brand Strategist, and Senior Full Stack Engineer.
+
+Your task is to design and build a world-class website for a premium AI & Digital Transformation Company.
+
+The goal is to create a website that is better than most modern AI company websites and worthy of Awwwards recognition.
+
+This website should immediately communicate innovation, trust, premium quality, and cutting-edge technology.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+COMPANY OVERVIEW
+
+We help businesses grow through Artificial Intelligence, Automation, Software Development, Digital Marketing, and Professional Training.
+
+Our company offers complete digital transformation solutions under one roof.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OUR SERVICES
+
+Artificial Intelligence
+
+• AI Agents
+• AI Voice Agents
+• AI Chatbots
+• AI Assistants
+• AI Customer Support Systems
+• AI Sales Agents
+• AI Receptionists
+• AI Automation
+• AI Workflow Automation
+• AI Business Solutions
+• AI Consulting
+• AI Integrations
+• AI Development
+
+Software Development
+
+• Custom Websites
+• Business Websites
+• E-Commerce Websites
+• Landing Pages
+• SaaS Platforms
+• CRM Development
+• ERP Systems
+• Dashboards
+• Admin Panels
+• Web Applications
+• Progressive Web Apps
+
+Mobile Development
+
+• Android Applications
+• iOS Applications
+• Cross Platform Apps
+• Flutter Development
+• React Native Development
+
+UI / UX
+
+• Product Design
+• UX Research
+• Wireframing
+• Prototyping
+• Dashboard Design
+• Mobile UI
+• Web UI
+• Design Systems
+• Branding
+• Logo Design
+
+Digital Marketing
+
+• SEO
+• Local SEO
+• Technical SEO
+• Google Ads
+• Meta Ads
+• Instagram Marketing
+• Facebook Marketing
+• LinkedIn Marketing
+• YouTube Marketing
+• Email Marketing
+• WhatsApp Marketing
+• Content Marketing
+• Performance Marketing
+• Social Media Management
+• Lead Generation
+• Marketing Automation
+• Analytics & Reporting
+
+Cloud & Infrastructure
+
+• AWS
+• Azure
+• Google Cloud
+• DevOps
+• Docker
+• Kubernetes
+• CI/CD
+• API Development
+• API Integration
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TRAINING PROGRAMS
+
+We also provide professional training.
+
+Include a dedicated Training section featuring:
+
+• Artificial Intelligence
+• Machine Learning
+• Python
+• Data Science
+• Full Stack Development
+• MERN Stack
+• React
+• Next.js
+• Flutter
+• React Native
+• Node.js
+• UI/UX Design
+• Cloud Computing
+• AWS
+• DevOps
+• Docker
+• Kubernetes
+• Prompt Engineering
+• ChatGPT
+• LangChain
+• RAG
+• AI Agent Development
+• Automation using n8n
+• Digital Marketing
+
+Also include:
+
+• Industrial Training
+• Summer Training
+• Winter Training
+• Internship Programs
+• Live Projects
+• Certifications
+• Placement Assistance
+• Career Guidance
+• Resume Building
+• Interview Preparation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TARGET CLIENTS
+
+• Startups
+• Enterprises
+• Hospitals
+• Restaurants
+• Hotels
+• Schools
+• Colleges
+• E-Commerce
+• Retail
+• Real Estate
+• Manufacturing
+• Logistics
+• Government
+• NGOs
+• Financial Companies
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DESIGN STYLE
+
+Create an ultra-premium futuristic design.
+
+Combine the design language of:
+
+• Apple
+• OpenAI
+• Stripe
+• Vercel
+• Linear
+• Framer
+• Raycast
+• ElevenLabs
+• Perplexity
+• Clerk
+• Notion
+• Arc Browser
+• Midjourney
+• Runway
+• Luma AI
+
+The design should feel like a multi-million dollar technology company.
+
+Avoid template-looking layouts.
+
+Everything should look handcrafted.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+COLOR PALETTE
+
+Background
+
+#050816
+#08111F
+#0F172A
+
+Primary
+
+#6C63FF
+#4F46E5
+
+Accent
+
+#00D4FF
+#8B5CF6
+#00FFA3
+
+Text
+
+#FFFFFF
+#CBD5E1
+#94A3B8
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TYPOGRAPHY
+
+Space Grotesk
+
+Inter
+
+Large headings
+
+Luxury spacing
+
+Perfect typography hierarchy
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WEBSITE STRUCTURE
+
+1. Hero Section
+
+Huge animated headline
+
+Powerful value proposition
+
+3D AI visualization
+
+Animated background
+
+Particles
+
+Gradient blobs
+
+Floating objects
+
+Two CTA buttons
+
+Statistics
+
+Animated badges
+
+2. Trusted By
+
+Infinite scrolling logos
+
+3. Services
+
+Interactive cards
+
+Animated hover effects
+
+Icons
+
+Glassmorphism
+
+4. AI Solutions Showcase
+
+Interactive AI demos
+
+Voice Agent demo
+
+Chatbot preview
+
+Automation flow preview
+
+5. Portfolio
+
+Case studies
+
+Live previews
+
+Before/After
+
+Video previews
+
+Animated cards
+
+6. Why Choose Us
+
+Bento Grid
+
+Animated statistics
+
+Awards
+
+Timeline
+
+7. Process
+
+Discovery
+
+Strategy
+
+Design
+
+Development
+
+Testing
+
+Launch
+
+Growth
+
+Animated timeline
+
+8. Technology Stack
+
+React
+
+Next.js
+
+TypeScript
+
+Tailwind
+
+Node.js
+
+Python
+
+FastAPI
+
+Supabase
+
+Firebase
+
+Flutter
+
+React Native
+
+AWS
+
+Azure
+
+OpenAI
+
+Anthropic
+
+Gemini
+
+Groq
+
+LangChain
+
+n8n
+
+Docker
+
+Kubernetes
+
+9. Industries
+
+Interactive cards
+
+3D icons
+
+10. Training Programs
+
+Course cards
+
+Internships
+
+Industrial Training
+
+Placement support
+
+Live projects
+
+Certification
+
+11. Digital Marketing
+
+SEO
+
+Ads
+
+Social Media
+
+Growth
+
+Analytics
+
+Lead Generation
+
+12. Testimonials
+
+Auto-scrolling testimonials
+
+Video testimonials
+
+13. Pricing
+
+Animated pricing cards
+
+14. FAQ
+
+Smooth accordion
+
+15. Blog
+
+Latest articles
+
+16. Contact
+
+Interactive contact form
+
+Google Maps
+
+Calendar booking
+
+WhatsApp
+
+17. Footer
+
+Modern premium footer
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ANIMATIONS
+
+The website must be heavily animated but smooth.
+
+Use
+
+GSAP
+
+ScrollTrigger
+
+Framer Motion
+
+Lenis
+
+Motion One
+
+Implement
+
+Smooth scrolling
+
+Parallax
+
+Scroll storytelling
+
+Horizontal scrolling
+
+Stacking cards
+
+Pinned sections
+
+Reveal animations
+
+Text split animations
+
+Character animations
+
+Gradient animations
+
+SVG path animations
+
+Mouse follower
+
+Cursor spotlight
+
+Magnetic buttons
+
+Hover effects
+
+Glass reflections
+
+Infinite marquees
+
+Morphing blobs
+
+Floating particles
+
+3D tilt cards
+
+Rotating AI globe
+
+Interactive network graph
+
+Animated dashboards
+
+Lottie animations
+
+Progress indicator
+
+Sticky sections
+
+Background transitions
+
+Page transitions
+
+Premium loading screen
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+USER EXPERIENCE
+
+Minimal
+
+Luxury
+
+Fast
+
+Responsive
+
+Modern
+
+Accessible
+
+SEO Optimized
+
+90+ Lighthouse Score
+
+WCAG Compliant
+
+Production Ready
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TECH STACK
+
+Next.js 15
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+Shadcn UI
+
+GSAP
+
+Framer Motion
+
+Lenis
+
+Three.js (for 3D)
+
+Spline (optional)
+
+Lottie
+
+React Icons
+
+Lucide Icons
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FINAL GOAL
+
+Design a website that users instantly remember.
+
+Every scroll should feel cinematic.
+
+Every animation should have a purpose.
+
+Every section should tell a story.
+
+The experience should make visitors think:
+
+"This is one of the best AI company websites I have ever seen."
+
+Generate a complete production-ready website with reusable components, scalable architecture, pixel-perfect UI, premium UX, SEO optimization, and award-winning animations.
