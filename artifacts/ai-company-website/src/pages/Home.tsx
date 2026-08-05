@@ -17,7 +17,6 @@ import Industries from '@/components/sections/Industries';
 import Training from '@/components/sections/Training';
 import DigitalMarketing from '@/components/sections/DigitalMarketing';
 import Testimonials from '@/components/sections/Testimonials';
-import Pricing from '@/components/sections/Pricing';
 import FAQ from '@/components/sections/FAQ';
 import Blog from '@/components/sections/Blog';
 import Contact from '@/components/sections/Contact';
@@ -72,7 +71,6 @@ export default function Home() {
         <Training />
         <DigitalMarketing />
         <Testimonials />
-        <Pricing />
         <FAQ />
         <Blog />
         <Contact />

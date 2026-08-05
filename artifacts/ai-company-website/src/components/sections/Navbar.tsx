@@ -1,14 +1,14 @@
-import React, { useRef, useEffect } from 'react';
-import { Link } from 'wouter';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'wouter';
 import { motion } from 'framer-motion';
 import { BrainCircuit } from 'lucide-react';
 
 const navLinks = [
-  { name: 'Services', href: '#services' },
-  { name: 'AI Solutions', href: '#solutions' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Training', href: '#training' },
-  { name: 'Pricing', href: '#pricing' },
+  { name: 'Services', href: '/services', isRoute: true },
+  { name: 'AI Solutions', href: '#solutions', isRoute: false },
+  { name: 'Portfolio', href: '#portfolio', isRoute: false },
+  { name: 'Training', href: '#training', isRoute: false },
+  { name: 'Contact', href: '#contact', isRoute: false },
 ];
 
 export default function Navbar() {
@@ -22,8 +22,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const [, setLocation] = useLocation();
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute?: boolean) => {
     e.preventDefault();
+    if (isRoute) {
+      setLocation(href);
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -45,7 +51,7 @@ export default function Navbar() {
             <BrainCircuit className="w-8 h-8 text-primary relative z-10 transition-transform group-hover:scale-110 duration-300" />
             <div className="absolute inset-0 bg-primary/20 blur-lg rounded-full group-hover:bg-primary/40 transition-colors" />
           </div>
-          <span className="font-display font-bold text-xl tracking-tight text-white">NEXUS<span className="text-primary">.AI</span></span>
+          <span className="font-display font-bold text-xl tracking-tight text-white">WALSA<span className="text-primary"> ONLINE</span></span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
@@ -53,7 +59,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              onClick={(e) => scrollToSection(e, link.href)}
+              onClick={(e) => scrollToSection(e, link.href, link.isRoute)}
               className="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group"
             >
               {link.name}

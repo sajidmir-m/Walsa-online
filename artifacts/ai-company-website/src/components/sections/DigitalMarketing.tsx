@@ -41,31 +41,39 @@ export default function DigitalMarketing() {
           
           <div className="w-full lg:w-1/2">
             <div className="relative bg-[#08111F] rounded-3xl border border-white/10 p-8 shadow-2xl">
-              <div className="flex justify-between items-center mb-8">
-                <div>
-                  <div className="text-sm text-slate-400 mb-1">Total Revenue Generated</div>
-                  <div className="text-4xl font-bold font-display text-white">$24.5M+</div>
-                </div>
-                <div className="px-4 py-2 bg-[#00FFA3]/10 text-[#00FFA3] rounded-full text-sm font-bold flex items-center gap-2">
-                  <Target className="w-4 h-4" /> +340% YoY
-                </div>
+              <div className="mb-6">
+                <div className="text-sm text-slate-400 mb-1 uppercase tracking-wider font-medium">Organic Growth Performance</div>
+                <div className="text-xl font-bold font-display text-white">Month-over-Month Trend</div>
               </div>
-              
+
               {/* Animated Growth Chart */}
               <div className="h-64 relative flex items-end gap-2">
-                {[30, 45, 40, 60, 55, 80, 75, 95, 100].map((h, i) => (
+                {[28, 42, 38, 58, 52, 74, 70, 88, 100].map((h, i) => (
                   <motion.div
                     key={i}
                     initial={{ height: 0 }}
                     whileInView={{ height: `${h}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: i * 0.1 }}
-                    className="flex-1 bg-gradient-to-t from-primary/20 to-primary rounded-t-md relative group"
+                    className="flex-1 bg-gradient-to-t from-primary/20 to-primary rounded-t-md relative group cursor-pointer"
                   >
-                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-background text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                      +{h}%
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                      Month {i + 1}
                     </div>
                   </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-6 grid grid-cols-3 gap-4 border-t border-white/5 pt-6">
+                {[
+                  { label: 'Organic Traffic', value: 'Growing' },
+                  { label: 'Conversion Rate', value: 'Optimized' },
+                  { label: 'Campaign ROI', value: 'Maximized' },
+                ].map((stat, i) => (
+                  <div key={i} className="text-center">
+                    <div className="text-primary font-bold text-sm">{stat.value}</div>
+                    <div className="text-slate-500 text-xs mt-1">{stat.label}</div>
+                  </div>
                 ))}
               </div>
             </div>

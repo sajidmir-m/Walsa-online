@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2 group mb-6 inline-flex">
               <BrainCircuit className="w-8 h-8 text-primary" />
-              <span className="font-display font-bold text-xl tracking-tight text-white">NEXUS<span className="text-primary">.AI</span></span>
+              <span className="font-display font-bold text-xl tracking-tight text-white">WALSA<span className="text-primary"> ONLINE</span></span>
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-8">
               Architecting the future of enterprise software. We blend artificial intelligence with world-class engineering to deliver unmatched digital experiences.
@@ -64,10 +64,10 @@ export default function Footer() {
       <div className="border-t border-white/10 bg-black/20 py-6">
         <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500">
-            © {new Date().getFullYear()} Nexus AI Technologies. All rights reserved.
+            © {new Date().getFullYear()} WALSA ONLINE. All rights reserved.
           </p>
           <div className="flex items-center gap-1 text-sm text-slate-500">
-            Made with <span className="text-red-500">❤️</span> by Nexus
+            Made with <span className="text-red-500">❤️</span> by WALSA ONLINE
           </div>
           <div className="flex items-center gap-6">
             <a href="#" className="text-sm text-slate-500 hover:text-white">Privacy Policy</a>

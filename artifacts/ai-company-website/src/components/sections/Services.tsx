@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'wouter';
 import { Brain, Code2, Smartphone, Paintbrush, Megaphone, Cloud } from 'lucide-react';
 
 const services = [
@@ -8,46 +9,53 @@ const services = [
     icon: Brain,
     description: 'Custom LLMs, autonomous agents, and predictive models.',
     features: ['Custom AI Agents', 'Machine Learning Models', 'RAG Systems', 'Computer Vision'],
-    color: 'from-blue-500 to-indigo-500'
+    color: 'from-blue-500 to-indigo-500',
+    slug: '/services/ai'
   },
   {
     title: 'Software Development',
     icon: Code2,
     description: 'Scalable web applications and enterprise systems.',
     features: ['Full-stack Development', 'SaaS Platforms', 'API Integration', 'Legacy Modernization'],
-    color: 'from-emerald-500 to-teal-500'
+    color: 'from-emerald-500 to-teal-500',
+    slug: '/services/software'
   },
   {
     title: 'Mobile Development',
     icon: Smartphone,
     description: 'Native and cross-platform mobile experiences.',
     features: ['iOS & Android Apps', 'React Native / Flutter', 'App Store Optimization', 'Mobile UI/UX'],
-    color: 'from-orange-500 to-red-500'
+    color: 'from-orange-500 to-red-500',
+    slug: '/services/mobile'
   },
   {
     title: 'UI/UX Design',
     icon: Paintbrush,
     description: 'Award-worthy interfaces that convert visitors.',
     features: ['User Research', 'Wireframing', 'Prototyping', 'Design Systems'],
-    color: 'from-pink-500 to-rose-500'
+    color: 'from-pink-500 to-rose-500',
+    slug: '/services/uiux'
   },
   {
     title: 'Digital Marketing',
     icon: Megaphone,
     description: 'Data-driven growth strategies and campaigns.',
     features: ['SEO / SEM', 'Performance Analytics', 'Content Strategy', 'Conversion Optimization'],
-    color: 'from-purple-500 to-fuchsia-500'
+    color: 'from-purple-500 to-fuchsia-500',
+    slug: '/services/marketing'
   },
   {
     title: 'Cloud & Infrastructure',
     icon: Cloud,
     description: 'Secure, high-availability cloud deployments.',
     features: ['AWS / Azure Migration', 'DevOps & CI/CD', 'Serverless Architecture', 'Security Audits'],
-    color: 'from-cyan-500 to-blue-500'
+    color: 'from-cyan-500 to-blue-500',
+    slug: '/services/cloud'
   }
 ];
 
 export default function Services() {
+  const [, setLocation] = useLocation();
   return (
     <section id="services" className="py-32 bg-background relative">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -88,10 +96,13 @@ export default function Services() {
                 ))}
               </ul>
 
-              <a href="#" className="inline-flex items-center gap-2 text-primary font-medium group/link">
-                Explore Services
+              <button
+                onClick={() => setLocation(service.slug)}
+                className="inline-flex items-center gap-2 text-primary font-medium group/link bg-transparent border-none cursor-pointer p-0"
+              >
+                Explore Service
                 <motion.span className="group-hover/link:translate-x-1 transition-transform">→</motion.span>
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>
