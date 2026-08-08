@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 
 const testimonials = [
@@ -16,7 +15,7 @@ const testimonials = [
 const TestimonialCard = ({ item }: { item: any }) => {
   const initials = item.name.split(' ').map((n: string) => n[0]).join('');
   return (
-    <div className="w-[400px] shrink-0 p-6 bg-[#08111F] rounded-2xl border border-white/5 mx-4">
+    <div className="w-[300px] sm:w-[400px] shrink-0 p-5 sm:p-6 bg-[#08111F] rounded-2xl border border-white/5 mx-3 sm:mx-4">
       <div className="flex items-center gap-1 mb-4">
         {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary text-primary" />)}
       </div>
@@ -46,28 +45,20 @@ export default function Testimonials() {
       </div>
 
       <div className="flex flex-col gap-8 relative">
-        <div className="flex w-[200%]">
-          <motion.div
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 40, ease: "linear", repeat: Infinity }}
-            className="flex hover:[animation-play-state:paused]"
-          >
+        <div className="flex overflow-hidden">
+          <div className="testimonial-marquee-left flex w-max">
             {[...testimonials, ...testimonials].map((item, i) => (
               <TestimonialCard key={`row1-${i}`} item={item} />
             ))}
-          </motion.div>
+          </div>
         </div>
 
-        <div className="flex w-[200%] justify-end">
-          <motion.div
-            animate={{ x: ["-50%", "0%"] }}
-            transition={{ duration: 45, ease: "linear", repeat: Infinity }}
-            className="flex hover:[animation-play-state:paused]"
-          >
-            {[...testimonials.reverse(), ...testimonials.reverse()].map((item, i) => (
+        <div className="flex overflow-hidden">
+          <div className="testimonial-marquee-right flex w-max">
+            {[...testimonials].reverse().concat([...testimonials].reverse()).map((item, i) => (
               <TestimonialCard key={`row2-${i}`} item={item} />
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

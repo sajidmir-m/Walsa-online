@@ -199,7 +199,7 @@
   background: hsl(var(--muted-foreground)); 
 }
 
-/* Auto-scrolling client marquee (TrustedBy) */
+/* Auto-scrolling marquees (TrustedBy clients, Testimonials) */
 @keyframes trusted-marquee {
   from {
     transform: translateX(0);
@@ -212,5 +212,15 @@
   animation: trusted-marquee 28s linear infinite;
 }
 .trusted-marquee:hover {
+  animation-play-state: paused;
+}
+.testimonial-marquee-left {
+  animation: trusted-marquee 40s linear infinite;
+}
+.testimonial-marquee-right {
+  animation: trusted-marquee 45s linear infinite reverse;
+}
+.testimonial-marquee-left:hover,
+.testimonial-marquee-right:hover {
   animation-play-state: paused;
 }

@@ -16,6 +16,10 @@ export default function HeroCanvas() {
   const animFrameRef = useRef<number>(0);
 
   useEffect(() => {
+    // The particle simulation is O(n^2) per frame — too expensive for phones,
+    // and barely visible there anyway. Desktop only.
+    if (window.matchMedia('(pointer: coarse), (max-width: 767px)').matches) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');

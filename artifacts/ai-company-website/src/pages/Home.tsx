@@ -24,29 +24,28 @@ import Footer from '@/components/sections/Footer';
 
 export default function Home() {
   useEffect(() => {
+    document.documentElement.classList.add('dark');
+
+    // Lenis smooth scrolling only on desktop pointers. On touch devices it
+    // interferes with native scrolling and burns CPU, so let the browser scroll.
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouch) return;
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
       mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    } as any); // Type cast due to older version types
+    } as any);
 
+    let rafId = 0;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-
-    requestAnimationFrame(raf);
-
-    // Force dark mode on document body
-    document.documentElement.classList.add('dark');
+    rafId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);
