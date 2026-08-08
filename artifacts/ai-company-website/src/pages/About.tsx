@@ -126,7 +126,7 @@ export default function About() {
         </motion.div>
 
         {/* Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 md:mb-24">
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
@@ -150,14 +150,14 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-3xl bg-gradient-to-br from-primary/10 via-accent/5 to-transparent border border-white/5 p-8 sm:p-12 mb-24"
+          className="rounded-3xl bg-gradient-to-br from-primary/10 via-accent/5 to-transparent border border-white/5 p-6 sm:p-12 mb-12 md:mb-24"
         >
           <h2 className="text-2xl sm:text-3xl font-bold font-display mb-4 text-white">{mission.title}</h2>
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl">{mission.body}</p>
         </motion.div>
 
         {/* Team */}
-        <div className="mb-24">
+        <div className="mb-12 md:mb-24">
           <h2 className="text-3xl sm:text-4xl font-bold font-display mb-3 text-white">The Team</h2>
           <p className="text-slate-400 mb-10 max-w-xl">
             Placeholder profiles for now — swap in real photos anytime by adding an image path to each card.
@@ -191,8 +191,8 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <div className="rounded-3xl bg-gradient-to-br from-primary/10 via-indigo-500/10 to-transparent border border-primary/10 p-10 text-center">
-          <h2 className="text-3xl font-bold font-display mb-4 text-white">{cta.title}</h2>
+        <div className="rounded-3xl bg-gradient-to-br from-primary/10 via-indigo-500/10 to-transparent border border-primary/10 p-6 sm:p-10 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold font-display mb-4 text-white">{cta.title}</h2>
           <p className="text-slate-400 mb-6 max-w-xl mx-auto">{cta.body}</p>
           <button
             onClick={() => setLocation('/#contact')}

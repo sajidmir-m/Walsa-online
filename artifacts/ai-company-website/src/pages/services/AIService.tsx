@@ -19,7 +19,7 @@ const techStack = ['OpenAI GPT-4', 'Anthropic Claude', 'Google Gemini', 'LangCha
 export default function AIService() {
   return (
     <ServicesLayout>
-      <div className="p-8 max-w-5xl mx-auto">
+      <div className="p-5 sm:p-8 max-w-5xl mx-auto">
         {/* Hero */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
@@ -32,7 +32,7 @@ export default function AIService() {
           <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
             We design and deploy production-grade AI systems — from autonomous agents to intelligent voice interfaces — that automate work, delight customers, and drive measurable growth.
           </p>
-          <div className="flex gap-4 mt-8">
+          <div className="flex flex-col sm:flex-row gap-3 mt-8">
             <button className="px-6 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary/90 transition-colors flex items-center gap-2" data-testid="btn-ai-get-started">
               Get Started <ArrowRight className="w-4 h-4" />
             </button>

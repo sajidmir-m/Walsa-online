@@ -77,7 +77,7 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-[320px] h-[320px] bg-primary/12 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
       <div className="absolute bottom-1/4 right-1/3 w-[280px] h-[280px] bg-accent/8 rounded-full blur-[130px] pointer-events-none mix-blend-screen" />
 
-      <div className="container mx-auto px-8 sm:px-12 lg:px-16 max-w-6xl relative z-10">
+      <div className="container mx-auto px-5 sm:px-8 md:px-12 lg:px-16 max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-14 lg:gap-20 xl:gap-28 items-center">
           <div className="max-w-md mx-auto lg:mx-0 lg:justify-self-end lg:pr-2">
             <motion.div
@@ -90,7 +90,7 @@ export default function Hero() {
               <span className="text-xs font-medium text-slate-300">{data.badge}</span>
             </motion.div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] font-bold font-display leading-[1.15] mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold font-display leading-[1.15] mb-4">
               <span className="block text-white">{data.headline_prefix}</span>
               <span className="block relative h-[1.2em] mt-0.5 overflow-hidden">
                 <AnimatePresence mode="wait">

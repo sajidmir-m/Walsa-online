@@ -26,7 +26,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <section className="py-32 bg-background relative">
+    <section className="py-16 md:py-32 bg-background relative">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold font-display mb-6 text-white">

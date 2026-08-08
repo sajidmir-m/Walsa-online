@@ -57,9 +57,9 @@ const services = [
 export default function Services() {
   const [, setLocation] = useLocation();
   return (
-    <section id="services" className="py-32 bg-background relative">
+    <section id="services" className="py-16 md:py-32 bg-background relative">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="mb-20">
+        <div className="mb-10 md:mb-20">
           <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Services</span> That Scale
           </h2>

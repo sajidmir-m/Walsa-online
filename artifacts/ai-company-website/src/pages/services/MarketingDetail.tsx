@@ -112,7 +112,7 @@ export default function MarketingDetail() {
 
   return (
     <ServicesLayout>
-      <div className="p-8 max-w-4xl mx-auto">
+      <div className="p-5 sm:p-8 max-w-4xl mx-auto">
         <motion.div
           key={service.slug}
           initial={{ opacity: 0, y: 20 }}

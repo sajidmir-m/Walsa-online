@@ -17,7 +17,7 @@ const techStack = ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Expo', 'Fireba
 export default function MobileService() {
   return (
     <ServicesLayout>
-      <div className="p-8 max-w-5xl mx-auto">
+      <div className="p-5 sm:p-8 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-medium mb-6">
             <Smartphone className="w-4 h-4" /> Mobile Development
@@ -29,7 +29,7 @@ export default function MobileService() {
           <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
             We craft beautiful, fast mobile applications for iOS and Android — from consumer apps to enterprise tools — that earn five-star reviews and drive retention.
           </p>
-          <div className="flex gap-4 mt-8">
+          <div className="flex flex-col sm:flex-row gap-3 mt-8">
             <button className="px-6 py-3 rounded-full bg-orange-500 text-white font-medium hover:bg-orange-500/90 transition-colors flex items-center gap-2" data-testid="btn-mobile-get-started">
               Start Your App <ArrowRight className="w-4 h-4" />
             </button>

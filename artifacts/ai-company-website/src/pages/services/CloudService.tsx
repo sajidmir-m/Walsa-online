@@ -19,7 +19,7 @@ const techStack = ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes', 'Terr
 export default function CloudService() {
   return (
     <ServicesLayout>
-      <div className="p-8 max-w-5xl mx-auto">
+      <div className="p-5 sm:p-8 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mb-6">
             <Cloud className="w-4 h-4" /> Cloud & Infrastructure
@@ -31,7 +31,7 @@ export default function CloudService() {
           <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
             We design and manage cloud infrastructure that is secure, highly available, and built for scale — so your team can ship features instead of managing servers.
           </p>
-          <div className="flex gap-4 mt-8">
+          <div className="flex flex-col sm:flex-row gap-3 mt-8">
             <button className="px-6 py-3 rounded-full bg-cyan-500 text-white font-medium hover:bg-cyan-500/90 transition-colors flex items-center gap-2" data-testid="btn-cloud-get-started">
               Get Cloud Assessment <ArrowRight className="w-4 h-4" />
             </button>

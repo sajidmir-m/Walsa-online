@@ -53,7 +53,7 @@ export default function Clients() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <h1 className="text-4xl md:text-6xl font-bold font-display mb-5 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display mb-5 leading-tight">
             {intro.headline}{' '}
             <span className="bg-gradient-to-r from-primary to-[#00FFA3] text-transparent bg-clip-text">
               {intro.headline_highlight}

@@ -22,9 +22,9 @@ export default function Process() {
   const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section className="py-32 bg-background relative overflow-hidden" ref={containerRef}>
+    <section className="py-16 md:py-32 bg-background relative overflow-hidden" ref={containerRef}>
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="mb-24">
+        <div className="mb-12 md:mb-24">
           <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
             How We <span className="text-primary">Work</span>
           </h2>
@@ -35,14 +35,14 @@ export default function Process() {
 
         <div className="relative">
           {/* Connecting Line Desktop */}
-          <div className="hidden md:block absolute top-12 left-0 right-0 h-1 bg-white/5">
+          <div className="hidden sm:block absolute top-12 left-0 right-0 h-1 bg-white/5">
             <motion.div 
               className="h-full bg-gradient-to-r from-primary to-accent origin-left"
               style={{ scaleX: pathLength }}
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-7 gap-8 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-8 relative z-10">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
@@ -50,16 +50,16 @@ export default function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex flex-col items-start md:items-center relative"
+                className="flex flex-col items-start sm:items-center relative"
               >
                 {/* Connecting Line Mobile */}
-                <div className="md:hidden absolute left-6 top-16 bottom-[-2rem] w-px bg-white/10" />
+                <div className="sm:hidden absolute left-6 top-16 bottom-[-2rem] w-px bg-white/10" />
 
                 <div className="w-12 h-12 rounded-full bg-[#050816] border-2 border-white/20 flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(0,0,0,0.5)] z-10 group hover:border-primary transition-colors">
                   <step.icon className="w-5 h-5 text-slate-300 group-hover:text-primary transition-colors" />
                 </div>
                 
-                <div className="pl-16 md:pl-0 md:text-center w-full">
+                <div className="pl-16 sm:pl-0 sm:text-center w-full">
                   <div className="text-primary font-mono text-sm font-bold mb-2">{step.id}</div>
                   <h3 className="text-xl font-bold font-display text-white mb-3">{step.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">{step.desc}</p>

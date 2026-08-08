@@ -59,7 +59,7 @@ export default function ClientDetailDialog({
 
           <div>
             <h4 className="text-sm font-semibold text-white mb-3">Results</h4>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {client.results.map((result) => (
                 <div
                   key={result.label}

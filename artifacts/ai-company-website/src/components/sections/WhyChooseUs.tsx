@@ -14,7 +14,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-32 bg-[#08111F] relative">
+    <section className="py-16 md:py-32 bg-[#08111F] relative">
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-16 relative z-10">
@@ -32,10 +32,10 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className={`rounded-3xl border border-white/10 p-8 flex items-center justify-center text-center overflow-hidden relative group ${feature.span} ${feature.bg}`}
+              className={`rounded-3xl border border-white/10 p-5 md:p-8 flex items-center justify-center text-center overflow-hidden relative group ${feature.span} ${feature.bg}`}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <h3 className="text-2xl font-bold font-display text-white relative z-10">
+              <h3 className="text-xl md:text-2xl font-bold font-display text-white relative z-10">
                 {feature.title}
               </h3>
             </motion.div>

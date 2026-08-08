@@ -13,9 +13,9 @@ const services = [
 
 export default function DigitalMarketing() {
   return (
-    <section className="py-32 bg-background relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           <div className="w-full lg:w-1/2">
             <h2 className="text-4xl md:text-5xl font-bold font-display mb-6">
               Grow Your Brand <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#00FFA3]">Online</span>
@@ -64,7 +64,7 @@ export default function DigitalMarketing() {
                 ))}
               </div>
 
-              <div className="mt-6 grid grid-cols-3 gap-4 border-t border-white/5 pt-6">
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-white/5 pt-6">
                 {[
                   { label: 'Organic Traffic', value: 'Growing' },
                   { label: 'Conversion Rate', value: 'Optimized' },

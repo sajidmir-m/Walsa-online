@@ -204,11 +204,11 @@ export default function OurWork() {
 
               {/* Card body */}
               <div className="p-6 flex flex-col flex-1">
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                   <span className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-slate-400 uppercase tracking-wider">
                     {item.industry}
                   </span>
-                  <div className="flex gap-3">
+                  <div className="flex flex-wrap gap-3">
                     <span className={`text-xs font-bold ${item.accent}`}>{item.metric}</span>
                     <span className="text-xs font-bold text-slate-500">{item.metric2}</span>
                   </div>

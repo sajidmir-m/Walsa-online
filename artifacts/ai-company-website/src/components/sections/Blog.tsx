@@ -31,7 +31,7 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section className="py-32 bg-background relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-background relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex justify-between items-end mb-16">
           <div>

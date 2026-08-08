@@ -27,7 +27,7 @@ export default function ServicesOverview() {
   const [, setLocation] = useLocation();
   return (
     <ServicesLayout>
-      <div className="p-8 max-w-5xl mx-auto">
+      <div className="p-5 sm:p-8 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-16">
           <h1 className="text-4xl md:text-6xl font-bold font-display mb-6 leading-tight">
             Everything You Need to

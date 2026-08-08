@@ -34,7 +34,7 @@ export default function Training() {
   const [tab, setTab] = useState<'courses' | 'programs'>('courses');
 
   return (
-    <section id="training" className="py-32 bg-[#0F172A] relative">
+    <section id="training" className="py-16 md:py-32 bg-[#0F172A] relative">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[150px] pointer-events-none" />
       
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
@@ -47,13 +47,13 @@ export default function Training() {
           <div className="inline-flex items-center p-1 bg-background rounded-full border border-white/10">
             <button
               onClick={() => setTab('courses')}
-              className={`px-8 py-3 rounded-full text-sm font-medium transition-all ${tab === 'courses' ? 'bg-primary text-white shadow-lg' : 'text-slate-400 hover:text-white'}`}
+              className={`px-4 sm:px-8 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-all ${tab === 'courses' ? 'bg-primary text-white shadow-lg' : 'text-slate-400 hover:text-white'}`}
             >
               Trending Courses
             </button>
             <button
               onClick={() => setTab('programs')}
-              className={`px-8 py-3 rounded-full text-sm font-medium transition-all ${tab === 'programs' ? 'bg-primary text-white shadow-lg' : 'text-slate-400 hover:text-white'}`}
+              className={`px-4 sm:px-8 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-all ${tab === 'programs' ? 'bg-primary text-white shadow-lg' : 'text-slate-400 hover:text-white'}`}
             >
               Career Programs
             </button>
@@ -68,7 +68,7 @@ export default function Training() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
             >
               {courses.map((course, i) => (
                 <div key={i} className="bg-card border border-white/5 hover:border-primary/50 p-6 rounded-2xl transition-all hover:-translate-y-1 group">

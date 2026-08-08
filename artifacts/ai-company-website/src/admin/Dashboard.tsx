@@ -59,7 +59,7 @@ export default function Dashboard() {
         <p className="text-slate-400 mt-1 text-sm">Overview of leads and site content</p>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
         {cards.map((card) => {
           const Icon = card.icon;
           return (

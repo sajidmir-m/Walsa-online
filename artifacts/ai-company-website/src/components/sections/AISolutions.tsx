@@ -12,7 +12,7 @@ export default function AISolutions() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
 
   return (
-    <section id="solutions" className="py-32 bg-[#0F172A] relative overflow-hidden">
+    <section id="solutions" className="py-16 md:py-32 bg-[#0F172A] relative overflow-hidden">
       {/* Dramatic lighting */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
@@ -42,8 +42,8 @@ export default function AISolutions() {
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
-                <tab.icon className="w-4 h-4 relative z-10" />
-                <span className="relative z-10">{tab.label}</span>
+                <tab.icon className="w-4 h-4 relative z-10 shrink-0" />
+                <span className="relative z-10 hidden sm:inline">{tab.label}</span>
               </button>
             ))}
           </div>

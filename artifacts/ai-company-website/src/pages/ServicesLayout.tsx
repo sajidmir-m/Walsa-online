@@ -80,18 +80,18 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
           )}
         </div>
 
-        <div className="ml-auto flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-2 sm:gap-3">
           <button
             onClick={() => setLocation('/')}
             className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
             data-testid="btn-back-home"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Home
+            <span className="hidden sm:inline">Back to Home</span>
           </button>
           <a
             href="/#contact"
-            className="px-5 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium hover:bg-primary/20 transition-colors"
+            className="px-3 sm:px-5 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs sm:text-sm font-medium hover:bg-primary/20 transition-colors whitespace-nowrap"
             data-testid="btn-get-started"
           >
             Get Started

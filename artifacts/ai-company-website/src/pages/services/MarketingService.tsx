@@ -20,7 +20,7 @@ export default function MarketingService() {
 
   return (
     <ServicesLayout>
-      <div className="p-8 max-w-5xl mx-auto">
+      <div className="p-5 sm:p-8 max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

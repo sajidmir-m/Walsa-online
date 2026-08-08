@@ -19,7 +19,7 @@ const techStack = ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'T
 export default function SoftwareService() {
   return (
     <ServicesLayout>
-      <div className="p-8 max-w-5xl mx-auto">
+      <div className="p-5 sm:p-8 max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
             <Code2 className="w-4 h-4" /> Software Development
@@ -31,7 +31,7 @@ export default function SoftwareService() {
           <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
             From custom websites to enterprise SaaS platforms, we engineer software that is fast, secure, and built to grow. Every line of code is a business decision.
           </p>
-          <div className="flex gap-4 mt-8">
+          <div className="flex flex-col sm:flex-row gap-3 mt-8">
             <button className="px-6 py-3 rounded-full bg-emerald-500 text-white font-medium hover:bg-emerald-500/90 transition-colors flex items-center gap-2" data-testid="btn-software-get-started">
               Start a Project <ArrowRight className="w-4 h-4" />
             </button>

@@ -36,7 +36,7 @@ const cases = [
 export default function Portfolio() {
   const [, setLocation] = useLocation();
   return (
-    <section id="portfolio" className="py-32 bg-background">
+    <section id="portfolio" className="py-16 md:py-32 bg-background">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
@@ -89,9 +89,9 @@ export default function Portfolio() {
                 </motion.div>
               </div>
               
-              <div className="p-8 bg-[#050816] z-10 border-t border-white/5">
-                <div className="flex justify-between items-start mb-4">
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-slate-300 uppercase tracking-wider">
+              <div className="p-5 sm:p-8 bg-[#050816] z-10 border-t border-white/5">
+                <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-start mb-4">
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-slate-300 uppercase tracking-wider w-fit">
                     {item.industry}
                   </span>
                   <span className="text-primary font-bold">{item.metric}</span>

@@ -75,9 +75,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 bg-[#08111F] relative">
+    <section id="contact" className="py-16 md:py-32 bg-[#08111F] relative">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="flex flex-col lg:flex-row gap-16">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
           <div className="w-full lg:w-5/12">
             <h2 className="text-4xl md:text-5xl font-bold font-display mb-6 text-white">
               {info.heading} <span className="text-primary">{info.heading_highlight}</span>
@@ -141,7 +141,7 @@ export default function Contact() {
           </div>
 
           <div className="w-full lg:w-7/12">
-            <div className="bg-[#050816] rounded-3xl p-8 md:p-10 border border-white/10">
+            <div className="bg-[#050816] rounded-3xl p-5 sm:p-8 md:p-10 border border-white/10">
               {submitted ? (
                 <div className="h-full min-h-[400px] flex flex-col items-center justify-center text-center">
                   <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-6">
