@@ -5,19 +5,22 @@ import NotFound from '@/pages/not-found';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { lazy, Suspense, type ReactNode } from 'react';
 import Home from '@/pages/Home';
-import OurWork from '@/pages/OurWork';
-import Clients from '@/pages/Clients';
-import About from '@/pages/About';
-import ServicesOverview from '@/pages/services/ServicesOverview';
-import AIService from '@/pages/services/AIService';
-import SoftwareService from '@/pages/services/SoftwareService';
-import MobileService from '@/pages/services/MobileService';
-import UIUXService from '@/pages/services/UIUXService';
-import MarketingService from '@/pages/services/MarketingService';
-import MarketingDetail from '@/pages/services/MarketingDetail';
-import CloudService from '@/pages/services/CloudService';
 import { AdminAuthProvider } from '@/admin/AuthContext';
 import RequireAuth from '@/admin/RequireAuth';
+
+// Public pages other than home load on demand so the first visit only
+// downloads what it needs.
+const OurWork = lazy(() => import('@/pages/OurWork'));
+const Clients = lazy(() => import('@/pages/Clients'));
+const About = lazy(() => import('@/pages/About'));
+const ServicesOverview = lazy(() => import('@/pages/services/ServicesOverview'));
+const AIService = lazy(() => import('@/pages/services/AIService'));
+const SoftwareService = lazy(() => import('@/pages/services/SoftwareService'));
+const MobileService = lazy(() => import('@/pages/services/MobileService'));
+const UIUXService = lazy(() => import('@/pages/services/UIUXService'));
+const MarketingService = lazy(() => import('@/pages/services/MarketingService'));
+const MarketingDetail = lazy(() => import('@/pages/services/MarketingDetail'));
+const CloudService = lazy(() => import('@/pages/services/CloudService'));
 
 const Login = lazy(() => import('@/admin/Login'));
 const Dashboard = lazy(() => import('@/admin/Dashboard'));
@@ -115,7 +118,9 @@ function App() {
       <TooltipProvider>
         <AdminAuthProvider>
           <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-            <Router />
+            <Suspense fallback={<AdminFallback />}>
+              <Router />
+            </Suspense>
           </WouterRouter>
           <Toaster />
         </AdminAuthProvider>
