@@ -126,6 +126,7 @@ export default function MarketingServicesAdmin() {
 
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_440px] gap-6">
         <div className="rounded-2xl border border-white/10 bg-[#050816] overflow-hidden">
+          <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-left text-slate-500 border-b border-white/10">
@@ -153,6 +154,7 @@ export default function MarketingServicesAdmin() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
 
         {selectedId ? (

@@ -36,6 +36,7 @@ VITE_SUPABASE_ANON_KEY=eyJhbGciOi...your-anon-key
 4. You should see success. Tables created: `pages`, `page_sections`, `queries`, `clients`, `marketing_services`, `site_settings`.
 5. Then open `artifacts/ai-company-website/supabase/migrations/0002_real_clients.sql`, paste it in a new query, and click **Run**. This replaces the demo clients with WALSA ONLINE's real clients (Elanpro, Prezrve, StepUp, DNA Networks, Class17, Travel Agencies). Fine-tune each client's description/logo anytime at `/admin/clients`.
 6. Then open `artifacts/ai-company-website/supabase/migrations/0003_real_contact_info.sql`, paste it in a new query, and click **Run**. This updates the Contact section with the real phone (+91 88250 56728), WhatsApp number, and Khanyar, Srinagar address. Editable anytime at `/admin/pages/contact`.
+7. Then open `artifacts/ai-company-website/supabase/migrations/0004_client_logo_storage.sql`, paste it in a new query, and click **Run**. This creates a public `client-logos` storage bucket so you can upload client logo images directly from `/admin/clients` instead of pasting a URL.
 
 ## 4. Create your admin login
 

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { Plus, Save, Trash2 } from 'lucide-react';
+import { Plus, Save, Trash2, Upload, ImageOff } from 'lucide-react';
 import { supabase, type DbClient } from '@/lib/supabaseClient';
 import AdminLayout from '@/admin/AdminLayout';
+
+const LOGO_BUCKET = 'client-logos';
 
 const emptyForm = (): Partial<DbClient> => ({
   slug: '',
@@ -24,6 +26,9 @@ export default function ClientsAdmin() {
   const [form, setForm] = useState<Partial<DbClient>>(emptyForm());
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const [logoBroken, setLogoBroken] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const list = useQuery({
     queryKey: ['admin_clients'],
@@ -39,6 +44,7 @@ export default function ClientsAdmin() {
   });
 
   useEffect(() => {
+    setLogoBroken(false);
     if (selectedId === 'new') {
       setForm({ ...emptyForm(), sort_order: (list.data?.length ?? 0) });
       return;
@@ -46,6 +52,30 @@ export default function ClientsAdmin() {
     const row = list.data?.find((c) => c.id === selectedId);
     if (row) setForm({ ...row });
   }, [selectedId, list.data]);
+
+  const uploadLogo = async (file: File) => {
+    if (!supabase) {
+      setMessage('Supabase is not configured');
+      return;
+    }
+    setUploading(true);
+    setMessage(null);
+    try {
+      const ext = file.name.split('.').pop() || 'png';
+      const path = `${(form.slug || 'client').trim() || 'client'}-${Date.now()}.${ext}`;
+      const { error: uploadError } = await supabase.storage
+        .from(LOGO_BUCKET)
+        .upload(path, file, { cacheControl: '3600', upsert: true });
+      if (uploadError) throw uploadError;
+      const { data } = supabase.storage.from(LOGO_BUCKET).getPublicUrl(path);
+      setForm((f) => ({ ...f, logo_url: data.publicUrl }));
+      setLogoBroken(false);
+    } catch (err) {
+      setMessage(err instanceof Error ? err.message : 'Upload failed');
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const save = async () => {
     if (!supabase || !form.name || !form.slug) {
@@ -118,6 +148,7 @@ export default function ClientsAdmin() {
 
       <div className="grid grid-cols-1 xl:grid-cols-[1fr_440px] gap-6">
         <div className="rounded-2xl border border-white/10 bg-[#050816] overflow-hidden">
+          <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-left text-slate-500 border-b border-white/10">
@@ -136,8 +167,19 @@ export default function ClientsAdmin() {
                   }`}
                 >
                   <td className="px-4 py-3">
-                    <div className="font-medium text-white">{c.name}</div>
-                    <div className="text-xs text-slate-500">{c.slug}</div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 shrink-0 rounded-lg overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center">
+                        {c.logo_url ? (
+                          <img src={c.logo_url} alt="" className="w-full h-full object-contain" />
+                        ) : (
+                          <span className="text-[10px] font-semibold text-slate-500">{c.logo_initials}</span>
+                        )}
+                      </div>
+                      <div>
+                        <div className="font-medium text-white">{c.name}</div>
+                        <div className="text-xs text-slate-500">{c.slug}</div>
+                      </div>
+                    </div>
                   </td>
                   <td className="px-4 py-3 text-slate-400 hidden md:table-cell">{c.industry}</td>
                   <td className="px-4 py-3 text-slate-500">{c.sort_order}</td>
@@ -145,6 +187,7 @@ export default function ClientsAdmin() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
 
         {selectedId ? (
@@ -156,7 +199,6 @@ export default function ClientsAdmin() {
                 ['slug', 'Slug'],
                 ['industry', 'Industry'],
                 ['logo_initials', 'Logo initials'],
-                ['logo_url', 'Logo URL'],
                 ['color', 'Gradient color classes'],
                 ['summary', 'Summary'],
               ] as const
@@ -170,6 +212,54 @@ export default function ClientsAdmin() {
                 />
               </div>
             ))}
+
+            <div className="space-y-1">
+              <label className="text-xs text-slate-500">Logo</label>
+              <div className="flex items-center gap-3">
+                <div className="w-14 h-14 shrink-0 rounded-xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center">
+                  {form.logo_url && !logoBroken ? (
+                    <img
+                      src={form.logo_url}
+                      alt="Logo preview"
+                      className="w-full h-full object-contain"
+                      onError={() => setLogoBroken(true)}
+                    />
+                  ) : (
+                    <ImageOff className="w-5 h-5 text-slate-600" />
+                  )}
+                </div>
+                <div className="flex-1 space-y-2">
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      if (file) uploadLogo(file);
+                      e.target.value = '';
+                    }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    disabled={uploading}
+                    className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm text-slate-300 hover:bg-white/10 cursor-pointer disabled:opacity-60"
+                  >
+                    <Upload className="w-4 h-4" /> {uploading ? 'Uploading…' : 'Upload image'}
+                  </button>
+                  <input
+                    value={form.logo_url ?? ''}
+                    onChange={(e) => {
+                      setForm((f) => ({ ...f, logo_url: e.target.value }));
+                      setLogoBroken(false);
+                    }}
+                    placeholder="or paste a logo URL"
+                    className="w-full bg-[#08111F] border border-white/10 rounded-xl px-3 py-2 text-white text-xs"
+                  />
+                </div>
+              </div>
+            </div>
             <div className="space-y-1">
               <label className="text-xs text-slate-500">Description</label>
               <textarea
