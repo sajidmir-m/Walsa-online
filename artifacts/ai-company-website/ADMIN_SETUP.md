@@ -36,7 +36,14 @@ VITE_SUPABASE_ANON_KEY=eyJhbGciOi...your-anon-key
 4. You should see success. Tables created: `pages`, `page_sections`, `queries`, `clients`, `marketing_services`, `site_settings`.
 5. Then open `artifacts/ai-company-website/supabase/migrations/0002_real_clients.sql`, paste it in a new query, and click **Run**. This replaces the demo clients with WALSA ONLINE's real clients (Elanpro, Prezrve, StepUp, DNA Networks, Class17, Travel Agencies). Fine-tune each client's description/logo anytime at `/admin/clients`.
 6. Then open `artifacts/ai-company-website/supabase/migrations/0003_real_contact_info.sql`, paste it in a new query, and click **Run**. This updates the Contact section with the real phone (+91 88250 56728), WhatsApp number, and Khanyar, Srinagar address. Editable anytime at `/admin/pages/contact`.
-7. Then open `artifacts/ai-company-website/supabase/migrations/0004_client_logo_storage.sql`, paste it in a new query, and click **Run**. This creates a public `client-logos` storage bucket so you can upload client logo images directly from `/admin/clients` instead of pasting a URL.
+7. Then open `artifacts/ai-company-website/supabase/migrations/0004_client_logo_storage.sql`, paste it in a new query, and click **Run**. This creates two public storage buckets — `client-logos` (logo uploads from `/admin/clients`) and `site-assets` (any other images you want later) — plus the upload permissions.
+
+   **If the SQL shows a notice about insufficient privileges** (some Supabase projects block policy creation from the SQL editor), create everything from the Dashboard instead:
+   1. **Storage** → **New bucket** → name it `client-logos`, toggle **Public bucket** ON → **Create**. (Repeat for `site-assets` if you want it.)
+   2. **Storage** → click the `client-logos` bucket → **Policies** → **New policy** → choose the template **"Give users access to all files"** or create a custom policy:
+      - SELECT (read): allow everyone (`true`)
+      - INSERT / UPDATE / DELETE: allow only authenticated users (`auth.role() = 'authenticated'`)
+   3. Save. Uploads from `/admin/clients` will work immediately.
 
 ## 4. Create your admin login
 

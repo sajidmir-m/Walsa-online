@@ -71,7 +71,18 @@ export default function ClientsAdmin() {
       setForm((f) => ({ ...f, logo_url: data.publicUrl }));
       setLogoBroken(false);
     } catch (err) {
-      setMessage(err instanceof Error ? err.message : 'Upload failed');
+      const raw = err instanceof Error ? err.message : 'Upload failed';
+      if (/bucket not found/i.test(raw)) {
+        setMessage(
+          'Storage bucket "client-logos" is missing. Run supabase/migrations/0004_client_logo_storage.sql in the Supabase SQL Editor (or create a public bucket named "client-logos" under Storage), then try again.',
+        );
+      } else if (/row-level security|not authorized|violates.*policy/i.test(raw)) {
+        setMessage(
+          'Upload blocked by storage permissions. Add the upload policy for the "client-logos" bucket (see ADMIN_SETUP.md step on storage), then try again.',
+        );
+      } else {
+        setMessage(raw);
+      }
     } finally {
       setUploading(false);
     }
