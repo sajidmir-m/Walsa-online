@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { useLocation } from 'wouter';
 import { type Client } from '@/data/clients';
 import { useClients } from '@/lib/useClients';
@@ -12,7 +11,7 @@ export default function TrustedBy() {
   const { clients } = useClients();
 
   return (
-    <section className="py-20 border-y border-white/5 bg-[#08111F] relative" id="clients">
+    <section className="py-20 border-y border-white/5 bg-[#08111F] relative overflow-hidden" id="clients">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
@@ -30,28 +29,35 @@ export default function TrustedBy() {
             View All Clients →
           </button>
         </div>
+      </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4">
-          {clients.map((client, i) => (
-            <motion.button
-              key={client.slug}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.04 }}
+      {/* Auto-scrolling marquee — pauses on hover */}
+      <div className="relative">
+        <div className="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#08111F] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#08111F] to-transparent z-10 pointer-events-none" />
+
+        <div className="trusted-marquee flex w-max">
+          {[...clients, ...clients].map((client, i) => (
+            <button
+              key={`${client.slug}-${i}`}
               onClick={() => setSelected(client)}
-              className="group rounded-xl bg-white/5 border border-white/5 hover:border-white/20 p-4 flex flex-col items-center gap-2 cursor-pointer transition-all hover:-translate-y-0.5 bg-transparent"
+              className="group w-44 sm:w-56 shrink-0 mx-2.5 sm:mx-4 rounded-2xl bg-white/5 border border-white/5 hover:border-white/20 p-6 sm:p-8 flex flex-col items-center gap-4 cursor-pointer transition-all hover:-translate-y-1"
               data-testid={`trusted-client-${client.slug}`}
               title={client.name}
             >
               <ClientLogo
                 client={client}
-                className="w-12 h-12 group-hover:scale-110 transition-transform shadow-md"
+                className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl group-hover:scale-110 transition-transform shadow-lg"
               />
-              <span className="text-[11px] text-slate-400 group-hover:text-white transition-colors truncate w-full text-center">
-                {client.name}
-              </span>
-            </motion.button>
+              <div className="text-center">
+                <span className="block text-sm sm:text-base font-semibold text-white group-hover:text-primary transition-colors truncate w-full">
+                  {client.name}
+                </span>
+                <span className="block text-[11px] text-slate-500 uppercase tracking-wider mt-1 truncate">
+                  {client.industry}
+                </span>
+              </div>
+            </button>
           ))}
         </div>
       </div>

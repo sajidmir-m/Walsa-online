@@ -75,7 +75,7 @@ export default function Clients() {
             >
               <ClientLogo
                 client={client}
-                className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl shadow-lg group-hover:scale-110 transition-transform"
+                className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl shadow-lg group-hover:scale-110 transition-transform"
               />
               <div className="text-center">
                 <h3 className="text-white font-semibold font-display text-sm sm:text-base mb-1">

@@ -198,3 +198,19 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground)); 
 }
+
+/* Auto-scrolling client marquee (TrustedBy) */
+@keyframes trusted-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.trusted-marquee {
+  animation: trusted-marquee 28s linear infinite;
+}
+.trusted-marquee:hover {
+  animation-play-state: paused;
+}
