@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrainCircuit } from 'lucide-react';
 import { SiX, SiGithub, SiYoutube, SiInstagram } from 'react-icons/si';
 import { FaLinkedinIn } from 'react-icons/fa6';
 
@@ -10,9 +9,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           
           <div className="lg:col-span-2">
-            <a href="#" className="flex items-center gap-2 group mb-6 inline-flex">
-              <BrainCircuit className="w-8 h-8 text-primary" />
-              <span className="font-display font-bold text-xl tracking-tight text-white">WALSA<span className="text-primary"> ONLINE</span></span>
+            <a href="#" className="inline-flex items-center group mb-6">
+              <img
+                src="/logo.jpg"
+                alt="WALSA ONLINE"
+                className="h-10 w-auto object-contain rounded-md"
+              />
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-8">
               Architecting the future of enterprise software. We blend artificial intelligence with world-class engineering to deliver unmatched digital experiences.
@@ -29,9 +31,18 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-6">Services</h4>
             <ul className="space-y-3">
-              {['AI Development', 'Custom Software', 'Mobile Apps', 'Cloud Architecture', 'UI/UX Design', 'Digital Marketing'].map((link, i) => (
-                <li key={i}>
-                  <a href="#" className="text-sm text-slate-400 hover:text-primary transition-colors">{link}</a>
+              {[
+                { label: 'AI Development', href: '/services/ai' },
+                { label: 'Custom Software', href: '/services/software' },
+                { label: 'Mobile Apps', href: '/services/mobile' },
+                { label: 'Cloud Architecture', href: '/services/cloud' },
+                { label: 'UI/UX Design', href: '/services/uiux' },
+                { label: 'Digital Marketing', href: '/services/marketing' },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-sm text-slate-400 hover:text-primary transition-colors">
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -40,9 +51,17 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-6">Company</h4>
             <ul className="space-y-3">
-              {['About Us', 'Careers', 'Portfolio', 'Blog', 'Contact', 'Partners'].map((link, i) => (
-                <li key={i}>
-                  <a href="#" className="text-sm text-slate-400 hover:text-primary transition-colors">{link}</a>
+              {[
+                { label: 'About Us', href: '/about' },
+                { label: 'Our Clients', href: '/clients' },
+                { label: 'Portfolio', href: '/work' },
+                { label: 'Blog', href: '/#blog' },
+                { label: 'Contact', href: '/#contact' },
+              ].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-sm text-slate-400 hover:text-primary transition-colors">
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>

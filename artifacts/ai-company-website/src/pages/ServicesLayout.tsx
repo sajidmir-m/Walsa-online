@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BrainCircuit, Brain, Code2, Smartphone, Paintbrush, Megaphone, Cloud, ChevronRight, Home, Menu, X, ArrowLeft } from 'lucide-react';
+import { Brain, Code2, Smartphone, Paintbrush, Megaphone, Cloud, ChevronRight, Home, Menu, X, ArrowLeft } from 'lucide-react';
+import { marketingServices, getMarketingService } from '@/data/marketingServices';
 
 export const serviceNav = [
   { title: 'Artificial Intelligence', slug: '/services/ai', icon: Brain, color: 'text-blue-400' },
@@ -20,9 +21,20 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
   const [location, setLocation] = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  const isMarketingSection = location.startsWith('/services/marketing');
+  const marketingSlug = location.replace('/services/marketing/', '');
+  const currentMarketing =
+    location.startsWith('/services/marketing/') && marketingSlug !== location
+      ? getMarketingService(marketingSlug)
+      : undefined;
+
+  const breadcrumbTitle = currentMarketing
+    ? currentMarketing.shortTitle
+    : serviceNav.find((s) => s.slug === location)?.title ??
+      (isMarketingSection ? 'Digital Marketing' : '');
+
   return (
     <div className="min-h-screen bg-[#050816] text-white flex flex-col">
-      {/* Top bar */}
       <header className="fixed top-0 left-0 right-0 z-50 h-16 bg-[#050816]/90 backdrop-blur-md border-b border-white/5 flex items-center px-6 gap-4">
         <button
           onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -32,9 +44,16 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
           {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
 
-        <button onClick={() => setLocation('/')} className="flex items-center gap-2 group cursor-pointer bg-transparent border-none p-0">
-          <BrainCircuit className="w-7 h-7 text-primary transition-transform group-hover:scale-110 duration-300" />
-          <span className="font-display font-bold text-lg tracking-tight text-white">WALSA<span className="text-primary"> ONLINE</span></span>
+        <button
+          onClick={() => setLocation('/')}
+          className="flex items-center group cursor-pointer bg-transparent border-none p-0"
+          aria-label="WALSA ONLINE home"
+        >
+          <img
+            src="/logo.jpg"
+            alt="WALSA ONLINE"
+            className="h-9 w-auto object-contain rounded-md transition-transform group-hover:scale-105 duration-300"
+          />
         </button>
 
         <div className="hidden md:flex items-center gap-1 ml-4 text-slate-500 text-sm">
@@ -43,7 +62,20 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
           {location !== '/services' && (
             <>
               <ChevronRight className="w-4 h-4" />
-              <span className="text-white">{serviceNav.find(s => s.slug === location)?.title ?? ''}</span>
+              {currentMarketing ? (
+                <>
+                  <button
+                    onClick={() => setLocation('/services/marketing')}
+                    className="text-slate-400 hover:text-white bg-transparent border-none cursor-pointer p-0"
+                  >
+                    Digital Marketing
+                  </button>
+                  <ChevronRight className="w-4 h-4" />
+                  <span className="text-white">{breadcrumbTitle}</span>
+                </>
+              ) : (
+                <span className="text-white">{breadcrumbTitle}</span>
+              )}
             </>
           )}
         </div>
@@ -58,7 +90,7 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
             Back to Home
           </button>
           <a
-            href="#"
+            href="/#contact"
             className="px-5 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium hover:bg-primary/20 transition-colors"
             data-testid="btn-get-started"
           >
@@ -68,7 +100,6 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
       </header>
 
       <div className="flex flex-1 pt-16">
-        {/* Sidebar */}
         <AnimatePresence>
           {(sidebarOpen || true) && (
             <motion.aside
@@ -82,7 +113,9 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
               style={{ height: 'calc(100vh - 4rem)' }}
             >
               <div className="p-4 border-b border-white/5">
-                <h2 className="text-xs uppercase tracking-widest text-slate-500 font-semibold px-2">Our Services</h2>
+                <h2 className="text-xs uppercase tracking-widest text-slate-500 font-semibold px-2">
+                  Our Services
+                </h2>
               </div>
 
               <nav className="p-4 flex flex-col gap-1 flex-1">
@@ -92,7 +125,10 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
                       ? 'bg-primary/10 text-primary border border-primary/20'
                       : 'text-slate-400 hover:text-white hover:bg-white/5'
                   }`}
-                  onClick={() => { setLocation('/services'); setSidebarOpen(false); }}
+                  onClick={() => {
+                    setLocation('/services');
+                    setSidebarOpen(false);
+                  }}
                   data-testid="nav-services-overview"
                 >
                   <Home className="w-4 h-4 shrink-0" />
@@ -104,22 +140,58 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
                 </div>
 
                 {serviceNav.map((service) => {
-                  const isActive = location === service.slug;
+                  const isMarketing = service.slug === '/services/marketing';
+                  const isActive = isMarketing
+                    ? isMarketingSection
+                    : location === service.slug;
+
                   return (
-                    <button
-                      key={service.slug}
-                      className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all group w-full bg-transparent border-none text-left ${
-                        isActive
-                          ? 'bg-primary/10 text-primary border border-primary/20'
-                          : 'text-slate-400 hover:text-white hover:bg-white/5'
-                      }`}
-                      onClick={() => { setLocation(service.slug); setSidebarOpen(false); }}
-                      data-testid={`nav-${service.slug.split('/').pop()}`}
-                    >
-                      <service.icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-primary' : service.color}`} />
-                      {service.title}
-                      {isActive && <ChevronRight className="w-4 h-4 ml-auto" />}
-                    </button>
+                    <div key={service.slug}>
+                      <button
+                        className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all group w-full bg-transparent border-none text-left ${
+                          isActive
+                            ? 'bg-primary/10 text-primary border border-primary/20'
+                            : 'text-slate-400 hover:text-white hover:bg-white/5'
+                        }`}
+                        onClick={() => {
+                          setLocation(service.slug);
+                          setSidebarOpen(false);
+                        }}
+                        data-testid={`nav-${service.slug.split('/').pop()}`}
+                      >
+                        <service.icon
+                          className={`w-4 h-4 shrink-0 ${isActive ? 'text-primary' : service.color}`}
+                        />
+                        {service.title}
+                        {isActive && <ChevronRight className="w-4 h-4 ml-auto" />}
+                      </button>
+
+                      {/* Marketing sub-links — one page per PDF service */}
+                      {isMarketing && isMarketingSection && (
+                        <div className="ml-4 mt-1 mb-2 flex flex-col gap-0.5 border-l border-white/5 pl-2">
+                          {marketingServices.map((item) => {
+                            const href = `/services/marketing/${item.slug}`;
+                            const subActive = location === href;
+                            return (
+                              <button
+                                key={item.slug}
+                                onClick={() => {
+                                  setLocation(href);
+                                  setSidebarOpen(false);
+                                }}
+                                className={`text-left px-3 py-2 rounded-lg text-xs font-medium transition-colors bg-transparent border-none cursor-pointer ${
+                                  subActive
+                                    ? 'text-purple-300 bg-purple-500/10'
+                                    : 'text-slate-500 hover:text-white hover:bg-white/5'
+                                }`}
+                              >
+                                {item.shortTitle}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
                   );
                 })}
               </nav>
@@ -127,7 +199,10 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
               <div className="p-4 border-t border-white/5">
                 <div className="rounded-xl bg-gradient-to-br from-primary/20 to-[#8B5CF6]/20 border border-primary/10 p-4">
                   <p className="text-xs text-slate-300 mb-3">Ready to get started?</p>
-                  <button className="w-full py-2 rounded-lg bg-primary text-white text-xs font-medium hover:bg-primary/90 transition-colors" data-testid="btn-sidebar-contact">
+                  <button
+                    className="w-full py-2 rounded-lg bg-primary text-white text-xs font-medium hover:bg-primary/90 transition-colors"
+                    data-testid="btn-sidebar-contact"
+                  >
                     Contact Us
                   </button>
                 </div>
@@ -136,7 +211,6 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
           )}
         </AnimatePresence>
 
-        {/* Overlay for mobile */}
         {sidebarOpen && (
           <div
             className="fixed inset-0 z-30 bg-black/50 md:hidden"
@@ -144,10 +218,7 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
           />
         )}
 
-        {/* Main content */}
-        <main className="flex-1 min-w-0 overflow-auto">
-          {children}
-        </main>
+        <main className="flex-1 min-w-0 overflow-auto">{children}</main>
       </div>
     </div>
   );

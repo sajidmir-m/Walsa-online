@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'wouter';
 
 const cases = [
   {
@@ -33,6 +34,7 @@ const cases = [
 ];
 
 export default function Portfolio() {
+  const [, setLocation] = useLocation();
   return (
     <section id="portfolio" className="py-32 bg-background">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -45,12 +47,15 @@ export default function Portfolio() {
               We don't just write code; we solve complex business problems. Here are some of our most impactful transformations.
             </p>
           </div>
-          <button className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/5 transition-colors font-medium text-white self-start">
-            View All Work
+          <button
+            onClick={() => setLocation('/work')}
+            className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/5 transition-colors font-medium text-white self-start shrink-0"
+          >
+            View All Work →
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {cases.map((item, index) => (
             <motion.div
               key={index}
@@ -58,7 +63,7 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group rounded-3xl bg-[#08111F] border border-white/5 overflow-hidden flex flex-col h-[500px]"
+              className="group rounded-3xl bg-[#08111F] border border-white/5 overflow-hidden flex flex-col sm:h-[500px]"
             >
               <div className={`flex-1 bg-gradient-to-b ${item.color} to-transparent relative p-8 flex flex-col items-center justify-center overflow-hidden`}>
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>

@@ -28,8 +28,8 @@ export default function HeroCanvas() {
     canvas.width = W;
     canvas.height = H;
 
-    const PARTICLE_COUNT = 120;
-    const CONNECTION_DIST = 160;
+    const PARTICLE_COUNT = 60;
+    const CONNECTION_DIST = 120;
 
     const particles: Particle[] = Array.from({ length: PARTICLE_COUNT }, () => ({
       x: Math.random() * W,
@@ -149,7 +149,7 @@ export default function HeroCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="w-full h-full absolute inset-0 pointer-events-none opacity-70"
+      className="w-full h-full absolute inset-0 pointer-events-none opacity-35 lg:w-1/2"
     />
   );
 }

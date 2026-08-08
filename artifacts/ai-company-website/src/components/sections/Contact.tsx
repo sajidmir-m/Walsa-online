@@ -34,7 +34,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-slate-500 mb-1">Email Us</div>
-                  <a href="mailto:hello@nexus.ai" className="text-lg text-white font-medium hover:text-primary transition-colors">hello@nexus.ai</a>
+                  <a href="mailto:hello@walsaonline.com" className="text-lg text-white font-medium hover:text-primary transition-colors">hello@walsaonline.com</a>
                 </div>
               </div>
 

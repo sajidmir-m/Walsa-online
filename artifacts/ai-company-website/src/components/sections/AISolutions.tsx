@@ -25,13 +25,13 @@ export default function AISolutions() {
           </p>
         </div>
 
-        <div className="flex justify-center mb-12 relative z-10">
-          <div className="inline-flex items-center p-1.5 bg-background/50 backdrop-blur-md rounded-full border border-white/10">
+        <div className="flex justify-center mb-8 sm:mb-12 relative z-10 px-4">
+          <div className="inline-flex items-center p-1 sm:p-1.5 bg-background/50 backdrop-blur-md rounded-full border border-white/10 w-full sm:w-auto">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative px-6 py-2.5 rounded-full flex items-center gap-2 text-sm font-medium transition-colors ${
+                className={`relative flex-1 sm:flex-none px-3 sm:px-6 py-2 sm:py-2.5 rounded-full flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium transition-colors ${
                   activeTab === tab.id ? 'text-white' : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -50,16 +50,16 @@ export default function AISolutions() {
         </div>
 
         <div className="max-w-4xl mx-auto bg-[#08111F] rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative z-10">
-          <div className="h-12 border-b border-white/10 flex items-center px-4 gap-2 bg-[#050816]">
-            <div className="w-3 h-3 rounded-full bg-red-500/80" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-            <div className="w-3 h-3 rounded-full bg-green-500/80" />
-            <div className="ml-4 text-xs font-mono text-slate-500 flex items-center gap-2">
+          <div className="h-10 sm:h-12 border-b border-white/10 flex items-center px-4 gap-2 bg-[#050816]">
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80" />
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80" />
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/80" />
+            <div className="ml-3 text-xs font-mono text-slate-500 hidden sm:flex items-center gap-2">
               <Terminal className="w-3 h-3" /> demo-environment.sh
             </div>
           </div>
           
-          <div className="p-8 h-[400px] flex flex-col justify-center relative">
+          <div className="p-4 sm:p-8 h-[320px] sm:h-[400px] flex flex-col justify-center relative overflow-hidden">
             <AnimatePresence mode="wait">
               {activeTab === 'voice' && (
                 <motion.div
@@ -145,7 +145,7 @@ export default function AISolutions() {
                   exit={{ opacity: 0, scale: 1.05 }}
                   className="w-full h-full relative flex items-center justify-center"
                 >
-                  <div className="relative w-[600px] h-[300px]">
+                  <div className="relative w-full max-w-[600px] h-[240px] sm:h-[300px] scale-[0.75] sm:scale-100 origin-center">
                     <motion.div className="absolute top-1/2 left-0 -translate-y-1/2 w-32 p-3 bg-card border border-white/10 rounded-xl z-10 shadow-lg text-center">
                       <div className="text-xs font-bold mb-1">Webhook</div>
                       <div className="text-[10px] text-slate-400">Trigger received</div>
