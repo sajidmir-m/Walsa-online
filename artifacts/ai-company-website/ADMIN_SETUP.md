@@ -28,12 +28,13 @@ VITE_SUPABASE_ANON_KEY=eyJhbGciOi...your-anon-key
 
 > Never put the **service_role** key in frontend code. It stays only in Supabase Edge Function secrets.
 
-## 3. Run the database migration
+## 3. Run the database migrations
 
 1. In Supabase: **SQL Editor** → **New query**.
 2. Open `artifacts/ai-company-website/supabase/migrations/0001_init.sql` from this repo.
 3. Paste the entire contents into the SQL Editor and click **Run**.
 4. You should see success. Tables created: `pages`, `page_sections`, `queries`, `clients`, `marketing_services`, `site_settings`.
+5. Then open `artifacts/ai-company-website/supabase/migrations/0002_real_clients.sql`, paste it in a new query, and click **Run**. This replaces the demo clients with WALSA ONLINE's real clients (Elanpro, Prezrve, StepUp, DNA Networks, Class17, Travel Agencies). Fine-tune each client's description/logo anytime at `/admin/clients`.
 
 ## 4. Create your admin login
 
