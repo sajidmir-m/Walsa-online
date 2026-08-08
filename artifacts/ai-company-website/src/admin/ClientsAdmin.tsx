@@ -53,6 +53,24 @@ export default function ClientsAdmin() {
     if (row) setForm({ ...row });
   }, [selectedId, list.data]);
 
+  // Convert exotic formats (avif, heic, ...) to PNG so logos render in every browser.
+  const normalizeImage = async (file: File): Promise<{ blob: Blob; ext: string; type: string }> => {
+    if (file.type === 'image/svg+xml') return { blob: file, ext: 'svg', type: file.type };
+    if (['image/png', 'image/jpeg', 'image/webp', 'image/gif'].includes(file.type)) {
+      const ext = file.type === 'image/jpeg' ? 'jpg' : file.type.split('/')[1];
+      return { blob: file, ext, type: file.type };
+    }
+    const bitmap = await createImageBitmap(file);
+    const canvas = document.createElement('canvas');
+    canvas.width = bitmap.width;
+    canvas.height = bitmap.height;
+    canvas.getContext('2d')!.drawImage(bitmap, 0, 0);
+    const blob = await new Promise<Blob>((resolve, reject) =>
+      canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('Could not convert image'))), 'image/png'),
+    );
+    return { blob, ext: 'png', type: 'image/png' };
+  };
+
   const uploadLogo = async (file: File) => {
     if (!supabase) {
       setMessage('Supabase is not configured');
@@ -61,11 +79,11 @@ export default function ClientsAdmin() {
     setUploading(true);
     setMessage(null);
     try {
-      const ext = file.name.split('.').pop() || 'png';
+      const { blob, ext, type } = await normalizeImage(file);
       const path = `${(form.slug || 'client').trim() || 'client'}-${Date.now()}.${ext}`;
       const { error: uploadError } = await supabase.storage
         .from(LOGO_BUCKET)
-        .upload(path, file, { cacheControl: '3600', upsert: true });
+        .upload(path, blob, { cacheControl: '3600', upsert: true, contentType: type });
       if (uploadError) throw uploadError;
       const { data } = supabase.storage.from(LOGO_BUCKET).getPublicUrl(path);
       setForm((f) => ({ ...f, logo_url: data.publicUrl }));

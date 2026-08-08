@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { Client } from '@/data/clients';
 import { cn } from '@/lib/utils';
 
@@ -12,7 +12,14 @@ interface ClientLogoProps {
 export default function ClientLogo({ client, className, imgClassName }: ClientLogoProps) {
   const [failed, setFailed] = useState(false);
 
-  if (failed) {
+  // Retry when the logo URL changes (e.g. real Supabase data replacing the
+  // static fallback after the initial fetch) — otherwise a 404 on the first
+  // src would lock this component on initials forever.
+  useEffect(() => {
+    setFailed(false);
+  }, [client.logoSrc]);
+
+  if (failed || !client.logoSrc) {
     return (
       <div
         className={cn(
@@ -32,7 +39,7 @@ export default function ClientLogo({ client, className, imgClassName }: ClientLo
       <img
         src={client.logoSrc}
         alt={`${client.name} logo`}
-        className={cn('w-full h-full object-cover', imgClassName)}
+        className={cn('w-full h-full object-contain', imgClassName)}
         onError={() => setFailed(true)}
       />
     </div>
