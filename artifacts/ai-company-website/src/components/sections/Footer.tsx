@@ -1,8 +1,16 @@
 import React from 'react';
 import { SiX, SiGithub, SiYoutube, SiInstagram } from 'react-icons/si';
 import { FaLinkedinIn } from 'react-icons/fa6';
+import { usePageSection } from '@/lib/pageContent';
+
+const defaultFooter = {
+  tagline:
+    'Architecting the future of enterprise software. We blend artificial intelligence with world-class engineering to deliver unmatched digital experiences.',
+};
 
 export default function Footer() {
+  const { data } = usePageSection('home', 'footer', defaultFooter);
+
   return (
     <footer className="bg-[#050816] pt-20 border-t border-white/10">
       <div className="container mx-auto px-6 max-w-7xl pb-12">
@@ -17,7 +25,7 @@ export default function Footer() {
               />
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-8">
-              Architecting the future of enterprise software. We blend artificial intelligence with world-class engineering to deliver unmatched digital experiences.
+              {data.tagline}
             </p>
             <div className="flex items-center gap-4">
               {[FaLinkedinIn, SiX, SiGithub, SiYoutube, SiInstagram].map((Icon, i) => (

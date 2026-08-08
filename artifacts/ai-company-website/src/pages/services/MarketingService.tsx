@@ -3,10 +3,20 @@ import { motion } from 'framer-motion';
 import { useLocation } from 'wouter';
 import { Megaphone, ArrowRight, CheckCircle2 } from 'lucide-react';
 import ServicesLayout from '@/pages/ServicesLayout';
-import { marketingServices } from '@/data/marketingServices';
+import { useMarketingServices } from '@/lib/useMarketingServices';
+import { usePageSection } from '@/lib/pageContent';
+
+const defaultIntro = {
+  badge: 'Marketing Solution',
+  headline: 'Digital Marketing',
+  headline_highlight: 'That Grows Brands',
+  body: "Choose a service below to see exactly what's included — Social Media, Content Creation, SEO, Ads, Strategy, and more — each managed end-to-end by WALSA ONLINE.",
+};
 
 export default function MarketingService() {
   const [, setLocation] = useLocation();
+  const { services: marketingServices } = useMarketingServices();
+  const { data: intro } = usePageSection('marketing', 'intro', defaultIntro);
 
   return (
     <ServicesLayout>
@@ -18,18 +28,15 @@ export default function MarketingService() {
           className="mb-14"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-medium mb-6">
-            <Megaphone className="w-4 h-4" /> Marketing Solution
+            <Megaphone className="w-4 h-4" /> {intro.badge}
           </div>
           <h1 className="text-4xl md:text-6xl font-bold font-display mb-6 leading-tight">
-            Digital Marketing
+            {intro.headline}
             <span className="block bg-gradient-to-r from-purple-400 to-fuchsia-400 text-transparent bg-clip-text">
-              That Grows Brands
+              {intro.headline_highlight}
             </span>
           </h1>
-          <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
-            Choose a service below to see exactly what’s included — Social Media, Content Creation, SEO,
-            Ads, Strategy, and more — each managed end-to-end by WALSA ONLINE.
-          </p>
+          <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">{intro.body}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">

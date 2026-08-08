@@ -2,13 +2,23 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'wouter';
 import { ArrowLeft } from 'lucide-react';
-import { clients, type Client } from '@/data/clients';
+import { type Client } from '@/data/clients';
+import { useClients } from '@/lib/useClients';
+import { usePageSection } from '@/lib/pageContent';
 import ClientDetailDialog from '@/components/ClientDetailDialog';
 import ClientLogo from '@/components/ClientLogo';
+
+const defaultIntro = {
+  headline: 'Brands That',
+  headline_highlight: 'Trust Us',
+  body: 'Click any logo to see who they are, what we built together, and the results we delivered — across technology and marketing.',
+};
 
 export default function Clients() {
   const [, setLocation] = useLocation();
   const [selected, setSelected] = useState<Client | null>(null);
+  const { clients } = useClients();
+  const { data: intro } = usePageSection('clients', 'intro', defaultIntro);
 
   return (
     <div className="min-h-screen bg-[#050816] text-white">
@@ -44,15 +54,12 @@ export default function Clients() {
           className="mb-14"
         >
           <h1 className="text-4xl md:text-6xl font-bold font-display mb-5 leading-tight">
-            Brands That{' '}
+            {intro.headline}{' '}
             <span className="bg-gradient-to-r from-primary to-[#00FFA3] text-transparent bg-clip-text">
-              Trust Us
+              {intro.headline_highlight}
             </span>
           </h1>
-          <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
-            Click any logo to see who they are, what we built together, and the results we delivered —
-            across technology and marketing.
-          </p>
+          <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">{intro.body}</p>
         </motion.div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">

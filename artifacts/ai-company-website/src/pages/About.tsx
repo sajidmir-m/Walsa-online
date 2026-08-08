@@ -2,6 +2,25 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'wouter';
 import { ArrowLeft, ArrowRight, Code2, Megaphone, Target, Users } from 'lucide-react';
+import { usePageSection } from '@/lib/pageContent';
+
+const defaultIntro = {
+  badge: 'Who We Are',
+  headline: 'Builders & Marketers,',
+  headline_highlight: 'Under One Roof',
+  body: 'WALSA ONLINE is a digital transformation company with two clear strengths: technology that ships, and marketing that grows. Our engineers build AI agents and software. Our marketers make sure the right people find you — with content, SEO, and campaigns that compound.',
+};
+
+const defaultMission = {
+  title: 'Our Mission',
+  body: 'Help ambitious businesses modernize how they operate and how they show up online — without juggling five agencies. From AI systems and cloud infrastructure to social media, reels, and paid ads, we take ownership end-to-end so you can focus on running the business.',
+};
+
+const defaultCta = {
+  title: "Let's Build Something Together",
+  body: "Whether you need AI agents, a new product, or a full marketing engine — we're ready.",
+  button: 'Get in Touch',
+};
 
 const team = [
   {
@@ -55,6 +74,9 @@ const pillars = [
 
 export default function About() {
   const [, setLocation] = useLocation();
+  const { data: intro } = usePageSection('about', 'intro', defaultIntro);
+  const { data: mission } = usePageSection('about', 'mission', defaultMission);
+  const { data: cta } = usePageSection('about', 'cta', defaultCta);
 
   return (
     <div className="min-h-screen bg-[#050816] text-white">
@@ -92,19 +114,15 @@ export default function About() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-6">
             <Users className="w-4 h-4 text-primary" />
-            <span className="text-sm text-slate-300">Who We Are</span>
+            <span className="text-sm text-slate-300">{intro.badge}</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold font-display mb-6 leading-tight">
-            Builders &amp; Marketers,{' '}
+            {intro.headline}{' '}
             <span className="bg-gradient-to-r from-primary to-[#00FFA3] text-transparent bg-clip-text">
-              Under One Roof
+              {intro.headline_highlight}
             </span>
           </h1>
-          <p className="text-slate-400 text-lg leading-relaxed">
-            WALSA ONLINE is a digital transformation company with two clear strengths: technology that
-            ships, and marketing that grows. Our engineers build AI agents and software. Our marketers
-            make sure the right people find you — with content, SEO, and campaigns that compound.
-          </p>
+          <p className="text-slate-400 text-lg leading-relaxed">{intro.body}</p>
         </motion.div>
 
         {/* Pillars */}
@@ -134,12 +152,8 @@ export default function About() {
           viewport={{ once: true }}
           className="rounded-3xl bg-gradient-to-br from-primary/10 via-accent/5 to-transparent border border-white/5 p-8 sm:p-12 mb-24"
         >
-          <h2 className="text-2xl sm:text-3xl font-bold font-display mb-4 text-white">Our Mission</h2>
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl">
-            Help ambitious businesses modernize how they operate and how they show up online — without
-            juggling five agencies. From AI systems and cloud infrastructure to social media, reels,
-            and paid ads, we take ownership end-to-end so you can focus on running the business.
-          </p>
+          <h2 className="text-2xl sm:text-3xl font-bold font-display mb-4 text-white">{mission.title}</h2>
+          <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl">{mission.body}</p>
         </motion.div>
 
         {/* Team */}
@@ -178,15 +192,13 @@ export default function About() {
 
         {/* CTA */}
         <div className="rounded-3xl bg-gradient-to-br from-primary/10 via-indigo-500/10 to-transparent border border-primary/10 p-10 text-center">
-          <h2 className="text-3xl font-bold font-display mb-4 text-white">Let’s Build Something Together</h2>
-          <p className="text-slate-400 mb-6 max-w-xl mx-auto">
-            Whether you need AI agents, a new product, or a full marketing engine — we’re ready.
-          </p>
+          <h2 className="text-3xl font-bold font-display mb-4 text-white">{cta.title}</h2>
+          <p className="text-slate-400 mb-6 max-w-xl mx-auto">{cta.body}</p>
           <button
             onClick={() => setLocation('/#contact')}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-white font-semibold hover:bg-primary/90 transition-colors"
           >
-            Get in Touch <ArrowRight className="w-4 h-4" />
+            {cta.button} <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </main>

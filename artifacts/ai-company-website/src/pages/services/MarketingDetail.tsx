@@ -3,10 +3,7 @@ import { motion } from 'framer-motion';
 import { useLocation, useParams } from 'wouter';
 import { ArrowRight, CheckCircle2, Megaphone } from 'lucide-react';
 import ServicesLayout from '@/pages/ServicesLayout';
-import {
-  getMarketingService,
-  marketingServices,
-} from '@/data/marketingServices';
+import { useMarketingService } from '@/lib/useMarketingServices';
 import NotFound from '@/pages/not-found';
 
 const accentStyles: Record<
@@ -95,15 +92,23 @@ export default function MarketingDetail() {
     (location.startsWith('/services/marketing/')
       ? location.slice('/services/marketing/'.length)
       : '');
-  const service = getMarketingService(slug);
+  const { service, loading, all } = useMarketingService(slug);
+
+  if (!loading && !service) {
+    return <NotFound />;
+  }
 
   if (!service) {
-    return <NotFound />;
+    return (
+      <ServicesLayout>
+        <div className="p-8 max-w-4xl mx-auto text-slate-400">Loading…</div>
+      </ServicesLayout>
+    );
   }
 
   const styles = accentStyles[service.accent] ?? accentStyles.purple;
   const Icon = service.icon;
-  const others = marketingServices.filter((s) => s.slug !== service.slug);
+  const others = all.filter((s) => s.slug !== service.slug);
 
   return (
     <ServicesLayout>
@@ -141,7 +146,7 @@ export default function MarketingDetail() {
           </p>
 
           <div className="rounded-2xl bg-[#08111F] border border-white/5 p-6 sm:p-8 mb-10">
-            <h2 className="text-xl font-bold font-display text-white mb-6">What’s Included</h2>
+            <h2 className="text-xl font-bold font-display text-white mb-6">What&apos;s Included</h2>
             <ul className="space-y-3">
               {service.items.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-slate-300">

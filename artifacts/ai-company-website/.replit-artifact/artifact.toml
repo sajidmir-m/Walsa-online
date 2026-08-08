@@ -26,3 +26,6 @@ to = "/index.html"
 [services.env]
 PORT = "18426"
 BASE_PATH = "/"
+# Set these as Replit Secrets (Secrets tab) for production:
+# VITE_SUPABASE_URL = https://YOUR_PROJECT.supabase.co
+# VITE_SUPABASE_ANON_KEY = your_anon_public_key

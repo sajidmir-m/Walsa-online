@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'wouter';
-import { clients, type Client } from '@/data/clients';
+import { type Client } from '@/data/clients';
+import { useClients } from '@/lib/useClients';
 import ClientDetailDialog from '@/components/ClientDetailDialog';
 import ClientLogo from '@/components/ClientLogo';
 
 export default function TrustedBy() {
   const [, setLocation] = useLocation();
   const [selected, setSelected] = useState<Client | null>(null);
+  const { clients } = useClients();
 
   return (
     <section className="py-20 border-y border-white/5 bg-[#08111F] relative" id="clients">

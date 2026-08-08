@@ -1,0 +1,12 @@
+# A string used to distinguish different Supabase projects on the same machine.
+# Not used by hosted projects.
+project_id = "walsa-online"
+
+[api]
+enabled = true
+
+[db]
+port = 54322
+
+[functions.submit-query]
+verify_jwt = false
