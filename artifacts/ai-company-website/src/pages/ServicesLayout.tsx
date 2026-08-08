@@ -50,9 +50,9 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
           aria-label="WALSA ONLINE home"
         >
           <img
-            src="/logo.jpg"
+            src="/logo.png"
             alt="WALSA ONLINE"
-            className="h-9 w-auto object-contain rounded-md transition-transform group-hover:scale-105 duration-300"
+            className="h-11 w-auto object-contain rounded-md transition-transform group-hover:scale-105 duration-300"
           />
         </button>
 

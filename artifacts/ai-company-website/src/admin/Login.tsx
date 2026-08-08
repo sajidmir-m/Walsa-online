@@ -31,7 +31,7 @@ export default function Login() {
     <div className="min-h-screen bg-[#050816] flex items-center justify-center p-6">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <img src="/logo.jpg" alt="WALSA ONLINE" className="h-12 w-auto mx-auto rounded-md mb-4" />
+          <img src="/logo.png" alt="WALSA ONLINE" className="h-16 w-auto mx-auto rounded-md mb-4" />
           <h1 className="text-2xl font-bold font-display text-white">Admin Panel</h1>
           <p className="text-slate-400 text-sm mt-2">Sign in to manage content &amp; queries</p>
         </div>

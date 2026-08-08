@@ -8,10 +8,10 @@ const defaultContact = {
   heading_highlight: 'Amazing',
   body: 'Ready to transform your business? Drop us a line and our engineering team will get back to you within 24 hours.',
   email: 'hello@walsaonline.com',
-  phone: '+1 (800) 555-0199',
-  whatsapp_number: '18005550199',
-  address_line1: '100 AI Avenue, Tech District',
-  address_line2: 'San Francisco, CA 94105',
+  phone: '+91 88250 56728',
+  whatsapp_number: '91495593939',
+  address_line1: 'Khanyar',
+  address_line2: 'Srinagar, Jammu and Kashmir',
 };
 
 export default function Contact() {

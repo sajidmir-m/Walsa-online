@@ -19,9 +19,9 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <a href="#" className="inline-flex items-center group mb-6">
               <img
-                src="/logo.jpg"
+                src="/logo.png"
                 alt="WALSA ONLINE"
-                className="h-10 w-auto object-contain rounded-md"
+                className="h-14 w-auto object-contain rounded-md"
               />
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-8">

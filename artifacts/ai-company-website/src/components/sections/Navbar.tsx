@@ -167,9 +167,9 @@ export default function Navbar() {
             aria-label="WALSA ONLINE home"
           >
             <img
-              src="/logo.jpg"
+              src="/logo.png"
               alt="WALSA ONLINE"
-              className="h-9 md:h-10 w-auto object-contain rounded-md transition-transform group-hover:scale-105 duration-300"
+              className="h-11 md:h-14 w-auto object-contain rounded-md transition-transform group-hover:scale-105 duration-300"
             />
           </button>
 
