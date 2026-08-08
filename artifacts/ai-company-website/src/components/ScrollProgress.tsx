@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import { IS_MOBILE } from '@/lib/device';
 
-export default function ScrollProgress() {
+function ProgressBar() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -15,4 +15,10 @@ export default function ScrollProgress() {
       style={{ scaleX }}
     />
   );
+}
+
+export default function ScrollProgress() {
+  // Scroll-linked springs run JS on every scroll frame — skip on mobile.
+  if (IS_MOBILE) return null;
+  return <ProgressBar />;
 }

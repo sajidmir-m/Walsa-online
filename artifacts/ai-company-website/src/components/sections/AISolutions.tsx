@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { IS_MOBILE } from '@/lib/device';
 import { Mic, MessageSquare, Workflow, Terminal, Send } from 'lucide-react';
+
+/* Static bar heights used on mobile instead of the infinite height animation,
+   which forces the browser to re-layout on every frame. */
+const staticBarHeights = [35, 60, 45, 80, 55, 95, 70, 40, 85, 65, 50, 90, 60, 75, 45, 88, 55, 70, 40, 62];
 
 const tabs = [
   { id: 'voice', label: 'AI Voice Agent', icon: Mic },
@@ -71,22 +76,32 @@ export default function AISolutions() {
                 >
                   <div className="w-32 h-32 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mb-8 relative">
                     <Mic className="w-10 h-10 text-primary" />
-                    <motion.div
-                      animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                      className="absolute inset-0 rounded-full bg-primary/20"
-                    />
-                  </div>
-                  <div className="flex items-center gap-1 mb-6 h-16">
-                    {[...Array(20)].map((_, i) => (
+                    {!IS_MOBILE && (
                       <motion.div
-                        key={i}
-                        animate={{ height: ["20%", "100%", "20%"] }}
-                        transition={{ duration: 1.5, delay: i * 0.1, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-1.5 bg-gradient-to-t from-primary to-accent rounded-full"
-                        style={{ height: '20%' }}
+                        animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-0 rounded-full bg-primary/20"
                       />
-                    ))}
+                    )}
+                  </div>
+                  <div className="flex items-end gap-1 mb-6 h-16">
+                    {IS_MOBILE
+                      ? staticBarHeights.map((h, i) => (
+                          <div
+                            key={i}
+                            className="w-1.5 bg-gradient-to-t from-primary to-accent rounded-full"
+                            style={{ height: `${h}%` }}
+                          />
+                        ))
+                      : [...Array(20)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            animate={{ height: ["20%", "100%", "20%"] }}
+                            transition={{ duration: 1.5, delay: i * 0.1, repeat: Infinity, ease: "easeInOut" }}
+                            className="w-1.5 bg-gradient-to-t from-primary to-accent rounded-full"
+                            style={{ height: '20%' }}
+                          />
+                        ))}
                   </div>
                   <p className="text-slate-400 font-mono text-sm">Processing natural language input...</p>
                 </motion.div>
@@ -187,9 +202,9 @@ export default function AISolutions() {
                         fill="none"
                         stroke="rgba(108,99,255,0.3)"
                         strokeWidth="2"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 2, repeat: Infinity }}
+                        initial={IS_MOBILE ? undefined : { pathLength: 0 }}
+                        animate={IS_MOBILE ? undefined : { pathLength: 1 }}
+                        transition={IS_MOBILE ? undefined : { duration: 2, repeat: Infinity }}
                       />
                     </svg>
                   </div>

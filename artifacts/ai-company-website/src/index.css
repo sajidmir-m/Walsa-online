@@ -224,3 +224,28 @@
 .testimonial-marquee-right:hover {
   animation-play-state: paused;
 }
+
+/* ------------------------------------------------------------------ */
+/* Mobile performance: heavy GPU effects are the main cause of lag on  */
+/* phones, so they are switched off below 768px.                       */
+/* ------------------------------------------------------------------ */
+@media (max-width: 767px) {
+  /* Decorative glow orbs (blur-[120px] etc.) force expensive offscreen
+     rendering. They are all pointer-events-none background art. */
+  [class*='blur-['] {
+    display: none !important;
+  }
+
+  /* backdrop-filter repaints everything behind the element on every
+     scroll frame (fixed navbars, badges). The semi-opaque backgrounds
+     behind them still look fine without the blur. */
+  [class*='backdrop-blur'] {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Blend modes force extra compositing passes. */
+  .mix-blend-screen {
+    mix-blend-mode: normal !important;
+  }
+}

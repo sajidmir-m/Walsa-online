@@ -1,4 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { MotionConfig } from 'framer-motion';
+import { IS_MOBILE } from '@/lib/device';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotFound from '@/pages/not-found';
@@ -115,16 +117,21 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <AdminAuthProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-            <Suspense fallback={<AdminFallback />}>
-              <Router />
-            </Suspense>
-          </WouterRouter>
-          <Toaster />
-        </AdminAuthProvider>
-      </TooltipProvider>
+      {/* On mobile, disable framer-motion transform/layout animations globally —
+          they are the main cause of scroll lag on low-power devices. Content
+          still appears (opacity), it just doesn't slide/scale around. */}
+      <MotionConfig reducedMotion={IS_MOBILE ? 'always' : 'never'}>
+        <TooltipProvider>
+          <AdminAuthProvider>
+            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+              <Suspense fallback={<AdminFallback />}>
+                <Router />
+              </Suspense>
+            </WouterRouter>
+            <Toaster />
+          </AdminAuthProvider>
+        </TooltipProvider>
+      </MotionConfig>
     </QueryClientProvider>
   );
 }

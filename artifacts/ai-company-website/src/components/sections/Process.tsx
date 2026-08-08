@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { IS_MOBILE } from '@/lib/device';
 import { Search, Map, PenTool, Code, TestTube, Rocket, TrendingUp } from 'lucide-react';
 
 const steps = [
@@ -12,14 +13,26 @@ const steps = [
   { id: "07", title: "Growth", icon: TrendingUp, desc: "Continuous monitoring, model fine-tuning, and marketing strategies to maximize ROI." }
 ];
 
-export default function Process() {
-  const containerRef = useRef<HTMLDivElement>(null);
+/** Desktop-only: the progress line tracks scroll on every frame, too costly for mobile. */
+function ConnectingLine({ containerRef }: { containerRef: React.RefObject<HTMLDivElement | null> }) {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"]
   });
-
   const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  return (
+    <div className="hidden sm:block absolute top-12 left-0 right-0 h-1 bg-white/5">
+      <motion.div
+        className="h-full bg-gradient-to-r from-primary to-accent origin-left"
+        style={{ scaleX: pathLength }}
+      />
+    </div>
+  );
+}
+
+export default function Process() {
+  const containerRef = useRef<HTMLDivElement>(null);
 
   return (
     <section className="py-16 md:py-32 bg-background relative overflow-hidden" ref={containerRef}>
@@ -34,13 +47,7 @@ export default function Process() {
         </div>
 
         <div className="relative">
-          {/* Connecting Line Desktop */}
-          <div className="hidden sm:block absolute top-12 left-0 right-0 h-1 bg-white/5">
-            <motion.div 
-              className="h-full bg-gradient-to-r from-primary to-accent origin-left"
-              style={{ scaleX: pathLength }}
-            />
-          </div>
+          {!IS_MOBILE && <ConnectingLine containerRef={containerRef} />}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-8 relative z-10">
             {steps.map((step, i) => (
