@@ -35,7 +35,7 @@ VITE_SUPABASE_ANON_KEY=eyJhbGciOi...your-anon-key
 3. Paste the entire contents into the SQL Editor and click **Run**.
 4. You should see success. Tables created: `pages`, `page_sections`, `queries`, `clients`, `marketing_services`, `site_settings`.
 5. Then open `artifacts/ai-company-website/supabase/migrations/0002_real_clients.sql`, paste it in a new query, and click **Run**. This replaces the demo clients with Kasshit's real clients (Elanpro, Prezrve, StepUp, DNA Networks, Class17, Travel Agencies). Fine-tune each client's description/logo anytime at `/admin/clients`.
-6. Then open `artifacts/ai-company-website/supabase/migrations/0003_real_contact_info.sql`, paste it in a new query, and click **Run**. This updates the Contact section with the real phone (+91 88250 56728), WhatsApp number, and Khanyar, Srinagar address. Editable anytime at `/admin/pages/contact`.
+6. Then open `artifacts/ai-company-website/supabase/migrations/0003_real_contact_info.sql`, paste it in a new query, and click **Run**. This updates the Contact section with the real phone (+91 91495 59393), WhatsApp number, and Khanyar, Srinagar address. Editable anytime at `/admin/pages/contact`.
 7. Then open `artifacts/ai-company-website/supabase/migrations/0004_client_logo_storage.sql`, paste it in a new query, and click **Run**. This creates two public storage buckets — `client-logos` (logo uploads from `/admin/clients`) and `site-assets` (any other images you want later) — plus the upload permissions.
 
    **If the SQL shows a notice about insufficient privileges** (some Supabase projects block policy creation from the SQL editor), create everything from the Dashboard instead:
@@ -84,7 +84,7 @@ npx supabase link --project-ref YOUR_PROJECT_REF
 3. Set secrets:
 
 ```bash
-npx supabase secrets set CALLMEBOT_PHONE=919876543210 CALLMEBOT_APIKEY=your_callmebot_key
+npx supabase secrets set CALLMEBOT_PHONE=919149559393 CALLMEBOT_APIKEY=your_callmebot_key
 ```
 
 4. Deploy the function:

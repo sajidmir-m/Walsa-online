@@ -239,8 +239,8 @@ insert into public.page_sections (page_slug, section_key, sort_order, content) v
     "heading_highlight": "Amazing",
     "body": "Ready to transform your business? Drop us a line and our engineering team will get back to you within 24 hours.",
     "email": "hello@kasshit.in",
-    "phone": "+91 88250 56728",
-    "whatsapp_number": "91495593939",
+    "phone": "+91 91495 59393",
+    "whatsapp_number": "919149559393",
     "address_line1": "Khanyar",
     "address_line2": "Srinagar, Jammu and Kashmir"
   }'::jsonb
@@ -258,8 +258,8 @@ on conflict (page_slug, section_key) do nothing;
 -- ---------------------------------------------------------------------------
 
 insert into public.site_settings (key, value) values
-  ('whatsapp', '{"number": "91495593939", "default_message": "Hi Kasshit, I''d like to discuss a project."}'::jsonb),
-  ('contact', '{"email": "hello@kasshit.in", "phone": "+91 88250 56728"}'::jsonb)
+  ('whatsapp', '{"number": "919149559393", "default_message": "Hi Kasshit, I''d like to discuss a project."}'::jsonb),
+  ('contact', '{"email": "hello@kasshit.in", "phone": "+91 91495 59393"}'::jsonb)
 on conflict (key) do nothing;
 
 -- ---------------------------------------------------------------------------

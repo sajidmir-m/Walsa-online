@@ -1,18 +1,12 @@
--- Update contact section + site settings with Kasshit's real phone/WhatsApp/address.
--- Paste this into Supabase → SQL Editor → Run (after 0001_init.sql has already been run once).
+-- Update contact / WhatsApp to Sajid's number: 9149559393
+-- Paste into Supabase → SQL Editor → Run (safe to re-run).
 
 update public.page_sections
 set content = jsonb_set(
-  jsonb_set(
-    jsonb_set(
       jsonb_set(content, '{phone}', '"+91 91495 59393"'),
       '{whatsapp_number}', '"919149559393"'
     ),
-    '{address_line1}', '"Khanyar"'
-  ),
-  '{address_line2}', '"Srinagar, Jammu and Kashmir"'
-),
-updated_at = now()
+    updated_at = now()
 where page_slug = 'contact' and section_key = 'info';
 
 update public.site_settings

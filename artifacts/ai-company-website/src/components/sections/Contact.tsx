@@ -8,8 +8,8 @@ const defaultContact = {
   heading_highlight: 'Amazing',
   body: 'Ready to transform your business? Drop us a line and our engineering team will get back to you within 24 hours.',
   email: 'hello@kasshit.in',
-  phone: '+91 88250 56728',
-  whatsapp_number: '91495593939',
+  phone: '+91 91495 59393',
+  whatsapp_number: '919149559393',
   address_line1: 'Khanyar',
   address_line2: 'Srinagar, Jammu and Kashmir',
 };
