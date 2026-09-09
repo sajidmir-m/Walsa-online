@@ -9,6 +9,7 @@ import { lazy, Suspense, type ReactNode } from 'react';
 import Home from '@/pages/Home';
 import { AdminAuthProvider } from '@/admin/AuthContext';
 import RequireAuth from '@/admin/RequireAuth';
+import SeoManager from '@/components/SeoManager';
 
 // Public pages other than home load on demand so the first visit only
 // downloads what it needs.
@@ -130,6 +131,7 @@ function App() {
         <TooltipProvider>
           <AdminAuthProvider>
             <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+              <SeoManager />
               <Suspense fallback={<AdminFallback />}>
                 <Router />
               </Suspense>

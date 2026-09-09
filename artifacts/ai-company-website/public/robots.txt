@@ -1,2 +1,9 @@
+# Kasshit — https://www.kasshit.in
 User-agent: *
 Allow: /
+
+# Keep admin / auth out of search indexes
+Disallow: /admin
+Disallow: /admin/
+
+Sitemap: https://www.kasshit.in/sitemap.xml

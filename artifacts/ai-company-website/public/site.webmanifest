@@ -1,0 +1,25 @@
+{
+  "name": "Kasshit",
+  "short_name": "Kasshit",
+  "description": "AI agents, software, cloud, and digital marketing — built and managed by Kasshit.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "800x714",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

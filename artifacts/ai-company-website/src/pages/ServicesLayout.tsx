@@ -47,12 +47,12 @@ export default function ServicesLayout({ children }: ServicesLayoutProps) {
         <button
           onClick={() => setLocation('/')}
           className="flex items-center group cursor-pointer bg-transparent border-none p-0"
-          aria-label="Kasshit home"
+          aria-label="KASSH.IT home"
         >
           <img
             src="/logo.png"
-            alt="Kasshit"
-            className="h-11 w-auto object-contain rounded-md transition-transform group-hover:scale-105 duration-300"
+            alt="KASSH.IT — Everyday. Reliable. Promised."
+            className="h-12 w-auto object-contain rounded-lg bg-white transition-transform group-hover:scale-105 duration-300"
           />
         </button>
 

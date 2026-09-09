@@ -164,12 +164,12 @@ export default function Navbar() {
           <button
             onClick={(e) => handleNav(e as any, '/', true)}
             className="flex items-center group cursor-pointer bg-transparent border-none p-0"
-            aria-label="Kasshit home"
+            aria-label="KASSH.IT home"
           >
             <img
               src="/logo.png"
-              alt="Kasshit"
-              className="h-11 md:h-14 w-auto object-contain rounded-md transition-transform group-hover:scale-105 duration-300"
+              alt="KASSH.IT — Everyday. Reliable. Promised."
+              className="h-12 md:h-16 w-auto object-contain rounded-lg bg-white transition-transform group-hover:scale-105 duration-300"
             />
           </button>
 

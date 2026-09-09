@@ -24,18 +24,19 @@ const defaultCta = {
 
 const team = [
   {
-    initials: 'AF',
-    name: 'Ayaan Farooq',
+    initials: 'SN',
+    name: 'Sajid Nazir',
     role: 'Founder & CEO',
-    blurb: 'Sets the vision across technology and growth â€” making sure every engagement delivers measurable outcomes.',
+    blurb:
+      'Founded KASSH.IT with a clear mission — ship reliable technology and marketing that businesses can count on every day.',
     color: 'from-primary to-[#8B5CF6]',
-    // Swap in a real photo later: image: '/images/team/ayaan.jpg',
+    // Swap in a real photo later: image: '/images/team/sajid-nazir.jpg',
   },
   {
     initials: 'SK',
     name: 'Sara Khan',
     role: 'Marketing Manager',
-    blurb: 'Owns brand strategy, content calendars, and paid acquisition â€” turning campaigns into consistent pipeline.',
+    blurb: 'Owns brand strategy, content calendars, and paid acquisition — turning campaigns into consistent pipeline.',
     color: 'from-purple-500 to-fuchsia-500',
   },
   {
@@ -84,12 +85,12 @@ export default function About() {
         <button
           onClick={() => setLocation('/')}
           className="flex items-center group cursor-pointer bg-transparent border-none p-0 mr-6"
-          aria-label="Kasshit home"
+          aria-label="KASSH.IT home"
         >
           <img
             src="/logo.png"
-            alt="Kasshit"
-            className="h-11 w-auto object-contain rounded-md transition-transform group-hover:scale-105 duration-300"
+            alt="KASSH.IT — Everyday. Reliable. Promised."
+            className="h-12 w-auto object-contain rounded-lg bg-white transition-transform group-hover:scale-105 duration-300"
           />
         </button>
         <div className="flex items-center gap-2 text-slate-500 text-sm">

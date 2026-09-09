@@ -20,8 +20,8 @@ export default function Footer() {
             <a href="#" className="inline-flex items-center group mb-6">
               <img
                 src="/logo.png"
-                alt="Kasshit"
-                className="h-14 w-auto object-contain rounded-md"
+                alt="KASSH.IT — Everyday. Reliable. Promised."
+                className="h-16 sm:h-20 w-auto object-contain rounded-lg bg-white"
               />
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-8">
