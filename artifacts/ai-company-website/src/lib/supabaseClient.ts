@@ -67,3 +67,21 @@ export interface DbMarketingService {
   accent: string;
   sort_order: number;
 }
+
+export interface DbWork {
+  id: string;
+  slug: string;
+  title: string;
+  category: string;
+  industry: string;
+  url: string;
+  domain: string;
+  description: string;
+  color: string;
+  accent: string;
+  border: string;
+  tags: string[];
+  image_url: string;
+  featured: boolean;
+  sort_order: number;
+}

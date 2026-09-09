@@ -45,6 +45,10 @@ VITE_SUPABASE_ANON_KEY=eyJhbGciOi...your-anon-key
       - INSERT / UPDATE / DELETE: allow only authenticated users (`auth.role() = 'authenticated'`)
    3. Save. Uploads from `/admin/clients` will work immediately.
 
+8. Then open `artifacts/ai-company-website/supabase/migrations/0005_works.sql`, paste it in a new query, and click **Run**. This creates the `works` table (portfolio projects for `/work` and the home portfolio), seeds your existing projects, and creates the `work-images` storage bucket for optional cover uploads from `/admin/work`.
+
+   If storage policies fail for `work-images`, create a public bucket named `work-images` and add the same public-read / authenticated-write policies as above.
+
 ## 4. Create your admin login
 
 1. In Supabase: **Authentication** → **Users** → **Add user** → **Create new user**.
@@ -106,6 +110,7 @@ npx supabase functions deploy submit-query --no-verify-jwt
 4. You can now:
    - See **Queries** (every contact-form lead) — also pushed to WhatsApp
    - Edit **Pages** (Home, About, Technology, Marketing, Contact, …)
+   - Manage **Our Work** — create, edit, delete portfolio projects and upload covers (`/admin/work`)
    - Manage **Clients** and **Marketing Services**
 
 ## 8. Production hosting (Replit)

@@ -31,6 +31,7 @@ const PagesList = lazy(() => import('@/admin/PagesList'));
 const PageEditor = lazy(() => import('@/admin/PageEditor'));
 const ClientsAdmin = lazy(() => import('@/admin/ClientsAdmin'));
 const MarketingServicesAdmin = lazy(() => import('@/admin/MarketingServicesAdmin'));
+const WorkAdmin = lazy(() => import('@/admin/WorkAdmin'));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -96,6 +97,11 @@ function Router() {
       <Route path="/admin/clients">
         <AdminRoute>
           <ClientsAdmin />
+        </AdminRoute>
+      </Route>
+      <Route path="/admin/work">
+        <AdminRoute>
+          <WorkAdmin />
         </AdminRoute>
       </Route>
       <Route path="/admin/marketing">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { useQuery } from '@tanstack/react-query';
-import { Inbox, FileText, Users, Megaphone, ArrowRight } from 'lucide-react';
+import { Inbox, FileText, Users, Megaphone, Briefcase, ArrowRight } from 'lucide-react';
 import { supabase } from '@/lib/supabaseClient';
 import AdminLayout from '@/admin/AdminLayout';
 
@@ -9,12 +9,13 @@ export default function Dashboard() {
   const stats = useQuery({
     queryKey: ['admin_dashboard_stats'],
     queryFn: async () => {
-      if (!supabase) return { newQueries: 0, totalQueries: 0, pages: 0, clients: 0, marketing: 0 };
+      if (!supabase) return { newQueries: 0, totalQueries: 0, pages: 0, works: 0, clients: 0, marketing: 0 };
 
-      const [newQ, allQ, pages, clients, marketing] = await Promise.all([
+      const [newQ, allQ, pages, works, clients, marketing] = await Promise.all([
         supabase.from('queries').select('id', { count: 'exact', head: true }).eq('status', 'new'),
         supabase.from('queries').select('id', { count: 'exact', head: true }),
         supabase.from('pages').select('slug', { count: 'exact', head: true }),
+        supabase.from('works').select('id', { count: 'exact', head: true }),
         supabase.from('clients').select('id', { count: 'exact', head: true }),
         supabase.from('marketing_services').select('id', { count: 'exact', head: true }),
       ]);
@@ -23,6 +24,7 @@ export default function Dashboard() {
         newQueries: newQ.count ?? 0,
         totalQueries: allQ.count ?? 0,
         pages: pages.count ?? 0,
+        works: works.count ?? 0,
         clients: clients.count ?? 0,
         marketing: marketing.count ?? 0,
       };
@@ -48,6 +50,7 @@ export default function Dashboard() {
     { label: 'New Queries', value: s?.newQueries ?? '—', href: '/admin/queries', icon: Inbox, accent: 'text-emerald-400' },
     { label: 'Total Queries', value: s?.totalQueries ?? '—', href: '/admin/queries', icon: Inbox, accent: 'text-primary' },
     { label: 'Pages', value: s?.pages ?? '—', href: '/admin/pages', icon: FileText, accent: 'text-violet-400' },
+    { label: 'Our Work', value: s?.works ?? '—', href: '/admin/work', icon: Briefcase, accent: 'text-amber-400' },
     { label: 'Clients', value: s?.clients ?? '—', href: '/admin/clients', icon: Users, accent: 'text-cyan-400' },
     { label: 'Marketing Services', value: s?.marketing ?? '—', href: '/admin/marketing', icon: Megaphone, accent: 'text-fuchsia-400' },
   ];
@@ -59,7 +62,7 @@ export default function Dashboard() {
         <p className="text-slate-400 mt-1 text-sm">Overview of leads and site content</p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
         {cards.map((card) => {
           const Icon = card.icon;
           return (

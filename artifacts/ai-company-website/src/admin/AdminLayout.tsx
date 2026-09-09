@@ -5,6 +5,7 @@ import {
   Inbox,
   FileText,
   Users,
+  Briefcase,
   Megaphone,
   LogOut,
   ExternalLink,
@@ -17,6 +18,7 @@ const nav = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard, exact: true },
   { href: '/admin/queries', label: 'Queries', icon: Inbox },
   { href: '/admin/pages', label: 'Pages', icon: FileText },
+  { href: '/admin/work', label: 'Our Work', icon: Briefcase },
   { href: '/admin/clients', label: 'Clients', icon: Users },
   { href: '/admin/marketing', label: 'Marketing', icon: Megaphone },
 ];
