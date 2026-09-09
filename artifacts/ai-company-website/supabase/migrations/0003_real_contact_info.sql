@@ -1,4 +1,4 @@
--- Update contact section + site settings with WALSA ONLINE's real phone/WhatsApp/address.
+-- Update contact section + site settings with Kasshit's real phone/WhatsApp/address.
 -- Paste this into Supabase → SQL Editor → Run (after 0001_init.sql has already been run once).
 
 update public.page_sections

@@ -75,7 +75,7 @@ Deno.serve(async (req) => {
 
     if (waPhone && waKey) {
       const text = [
-        '🔔 New WALSA ONLINE Query',
+        '🔔 New Kasshit Query',
         '',
         `Name: ${name}`,
         `Email: ${email}`,

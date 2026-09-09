@@ -1,4 +1,4 @@
-# WALSA ONLINE — Admin Panel Setup Guide
+# Kasshit — Admin Panel Setup Guide
 
 Follow these steps **once**. After this, you manage everything from `/admin`.
 
@@ -8,7 +8,7 @@ Follow these steps **once**. After this, you manage everything from `/admin`.
 
 1. Go to [https://supabase.com](https://supabase.com) and sign up / log in.
 2. Click **New project**.
-3. Pick an organization, name the project (e.g. `walsa-online`), set a strong database password, choose a region close to you.
+3. Pick an organization, name the project (e.g. `Kasshit-online`), set a strong database password, choose a region close to you.
 4. Wait ~1–2 minutes for the project to finish provisioning.
 
 ## 2. Get your API keys
@@ -34,7 +34,7 @@ VITE_SUPABASE_ANON_KEY=eyJhbGciOi...your-anon-key
 2. Open `artifacts/ai-company-website/supabase/migrations/0001_init.sql` from this repo.
 3. Paste the entire contents into the SQL Editor and click **Run**.
 4. You should see success. Tables created: `pages`, `page_sections`, `queries`, `clients`, `marketing_services`, `site_settings`.
-5. Then open `artifacts/ai-company-website/supabase/migrations/0002_real_clients.sql`, paste it in a new query, and click **Run**. This replaces the demo clients with WALSA ONLINE's real clients (Elanpro, Prezrve, StepUp, DNA Networks, Class17, Travel Agencies). Fine-tune each client's description/logo anytime at `/admin/clients`.
+5. Then open `artifacts/ai-company-website/supabase/migrations/0002_real_clients.sql`, paste it in a new query, and click **Run**. This replaces the demo clients with Kasshit's real clients (Elanpro, Prezrve, StepUp, DNA Networks, Class17, Travel Agencies). Fine-tune each client's description/logo anytime at `/admin/clients`.
 6. Then open `artifacts/ai-company-website/supabase/migrations/0003_real_contact_info.sql`, paste it in a new query, and click **Run**. This updates the Contact section with the real phone (+91 88250 56728), WhatsApp number, and Khanyar, Srinagar address. Editable anytime at `/admin/pages/contact`.
 7. Then open `artifacts/ai-company-website/supabase/migrations/0004_client_logo_storage.sql`, paste it in a new query, and click **Run**. This creates two public storage buckets — `client-logos` (logo uploads from `/admin/clients`) and `site-assets` (any other images you want later) — plus the upload permissions.
 

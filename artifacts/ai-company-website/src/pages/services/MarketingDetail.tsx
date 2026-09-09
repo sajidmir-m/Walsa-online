@@ -161,7 +161,7 @@ export default function MarketingDetail() {
             <div className="flex items-start gap-3">
               <Megaphone className={`w-5 h-5 mt-0.5 shrink-0 ${styles.icon}`} />
               <p className="text-slate-400 text-sm leading-relaxed">
-                Managed by <span className="text-white font-medium">WALSA ONLINE</span> — from planning
+                Managed by <span className="text-white font-medium">Kasshit</span> — from planning
                 to execution and reporting — so you can focus on running your business while we grow
                 this part of your brand.
               </p>

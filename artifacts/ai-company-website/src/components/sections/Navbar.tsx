@@ -164,11 +164,11 @@ export default function Navbar() {
           <button
             onClick={(e) => handleNav(e as any, '/', true)}
             className="flex items-center group cursor-pointer bg-transparent border-none p-0"
-            aria-label="WALSA ONLINE home"
+            aria-label="Kasshit home"
           >
             <img
               src="/logo.png"
-              alt="WALSA ONLINE"
+              alt="Kasshit"
               className="h-11 md:h-14 w-auto object-contain rounded-md transition-transform group-hover:scale-105 duration-300"
             />
           </button>

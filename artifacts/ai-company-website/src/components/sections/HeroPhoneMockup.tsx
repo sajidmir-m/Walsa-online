@@ -83,13 +83,13 @@ export default function HeroPhoneMockup() {
               <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                 <span className="text-[8px] font-bold text-white">WO</span>
               </div>
-              <span className="text-xs font-semibold text-white">walsa.online</span>
+              <span className="text-xs font-semibold text-white">kasshit.in</span>
               <span className="w-1.5 h-1.5 rounded-full bg-[#00FFA3] animate-pulse" />
             </div>
             <p className="text-[11px] text-white/90 leading-snug line-clamp-2">{slide.caption}</p>
             <div className="flex items-center gap-1.5 mt-1.5 text-white/60">
               <Music2 className="w-3 h-3" />
-              <span className="text-[9px] truncate">Original Audio · WALSA ONLINE</span>
+              <span className="text-[9px] truncate">Original Audio · Kasshit</span>
             </div>
           </div>
 

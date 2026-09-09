@@ -1,6 +1,6 @@
 # A string used to distinguish different Supabase projects on the same machine.
 # Not used by hosted projects.
-project_id = "walsa-online"
+project_id = "Kasshit-online"
 
 [api]
 enabled = true

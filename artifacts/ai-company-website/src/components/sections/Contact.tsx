@@ -7,7 +7,7 @@ const defaultContact = {
   heading: "Let's Build Something",
   heading_highlight: 'Amazing',
   body: 'Ready to transform your business? Drop us a line and our engineering team will get back to you within 24 hours.',
-  email: 'hello@walsaonline.com',
+  email: 'hello@kasshit.in',
   phone: '+91 88250 56728',
   whatsapp_number: '91495593939',
   address_line1: 'Khanyar',
@@ -28,7 +28,7 @@ export default function Contact() {
   });
 
   const waHref = `https://wa.me/${info.whatsapp_number.replace(/\D/g, '')}?text=${encodeURIComponent(
-    "Hi WALSA ONLINE, I'd like to discuss a project.",
+    "Hi Kasshit, I'd like to discuss a project.",
   )}`;
 
   const handleSubmit = async (e: React.FormEvent) => {

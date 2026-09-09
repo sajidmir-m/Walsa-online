@@ -2,7 +2,7 @@ import React from 'react';
 import { Star } from 'lucide-react';
 
 const testimonials = [
-  { name: "Sarah Jenkins", role: "CTO, TechFlow", text: "WALSA ONLINE completely transformed our data pipeline. What used to take days now happens in real-time." },
+  { name: "Sarah Jenkins", role: "CTO, TechFlow", text: "Kasshit completely transformed our data pipeline. What used to take days now happens in real-time." },
   { name: "Marcus Chen", role: "Founder, RetailPro", text: "Their predictive AI model increased our inventory efficiency by 40%. The ROI was visible in week one." },
   { name: "Elena Rodriguez", role: "VP Engineering, HealthSync", text: "The healthcare app they built is flawless. Secure, compliant, and beautifully designed. Highly recommend." },
   { name: "David Kim", role: "Director of Marketing, Elevate", text: "Our lead generation tripled after they implemented their automated marketing funnels. Incredible work." },

@@ -1,4 +1,4 @@
--- WALSA ONLINE — Admin Panel schema
+-- Kasshit — Admin Panel schema
 -- Paste this entire file into Supabase → SQL Editor → Run
 
 -- ---------------------------------------------------------------------------
@@ -189,7 +189,7 @@ insert into public.page_sections (page_slug, section_key, sort_order, content) v
     "badge": "Who We Are",
     "headline": "Builders & Marketers,",
     "headline_highlight": "Under One Roof",
-    "body": "WALSA ONLINE is a digital transformation company with two clear strengths: technology that ships, and marketing that grows. Our engineers build AI agents and software. Our marketers make sure the right people find you — with content, SEO, and campaigns that compound."
+    "body": "Kasshit is a digital transformation company with two clear strengths: technology that ships, and marketing that grows. Our engineers build AI agents and software. Our marketers make sure the right people find you — with content, SEO, and campaigns that compound."
   }'::jsonb
 ),
 (
@@ -221,7 +221,7 @@ insert into public.page_sections (page_slug, section_key, sort_order, content) v
     "badge": "Marketing Solution",
     "headline": "Digital Marketing",
     "headline_highlight": "That Grows Brands",
-    "body": "Choose a service below to see exactly what''s included — Social Media, Content Creation, SEO, Ads, Strategy, and more — each managed end-to-end by WALSA ONLINE."
+    "body": "Choose a service below to see exactly what''s included — Social Media, Content Creation, SEO, Ads, Strategy, and more — each managed end-to-end by Kasshit."
   }'::jsonb
 ),
 (
@@ -238,7 +238,7 @@ insert into public.page_sections (page_slug, section_key, sort_order, content) v
     "heading": "Let''s Build Something",
     "heading_highlight": "Amazing",
     "body": "Ready to transform your business? Drop us a line and our engineering team will get back to you within 24 hours.",
-    "email": "hello@walsaonline.com",
+    "email": "hello@kasshit.in",
     "phone": "+91 88250 56728",
     "whatsapp_number": "91495593939",
     "address_line1": "Khanyar",
@@ -258,8 +258,8 @@ on conflict (page_slug, section_key) do nothing;
 -- ---------------------------------------------------------------------------
 
 insert into public.site_settings (key, value) values
-  ('whatsapp', '{"number": "91495593939", "default_message": "Hi WALSA ONLINE, I''d like to discuss a project."}'::jsonb),
-  ('contact', '{"email": "hello@walsaonline.com", "phone": "+91 88250 56728"}'::jsonb)
+  ('whatsapp', '{"number": "91495593939", "default_message": "Hi Kasshit, I''d like to discuss a project."}'::jsonb),
+  ('contact', '{"email": "hello@kasshit.in", "phone": "+91 88250 56728"}'::jsonb)
 on conflict (key) do nothing;
 
 -- ---------------------------------------------------------------------------

@@ -8,7 +8,7 @@ const defaultIntro = {
   badge: 'Who We Are',
   headline: 'Builders & Marketers,',
   headline_highlight: 'Under One Roof',
-  body: 'WALSA ONLINE is a digital transformation company with two clear strengths: technology that ships, and marketing that grows. Our engineers build AI agents and software. Our marketers make sure the right people find you — with content, SEO, and campaigns that compound.',
+  body: 'Kasshit is a digital transformation company with two clear strengths: technology that ships, and marketing that grows. Our engineers build AI agents and software. Our marketers make sure the right people find you — with content, SEO, and campaigns that compound.',
 };
 
 const defaultMission = {
@@ -84,11 +84,11 @@ export default function About() {
         <button
           onClick={() => setLocation('/')}
           className="flex items-center group cursor-pointer bg-transparent border-none p-0 mr-6"
-          aria-label="WALSA ONLINE home"
+          aria-label="Kasshit home"
         >
           <img
             src="/logo.png"
-            alt="WALSA ONLINE"
+            alt="Kasshit"
             className="h-11 w-auto object-contain rounded-md transition-transform group-hover:scale-105 duration-300"
           />
         </button>

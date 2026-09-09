@@ -1,4 +1,4 @@
--- Replace demo/placeholder clients with WALSA ONLINE's real clients.
+-- Replace demo/placeholder clients with Kasshit's real clients.
 -- Paste this into Supabase → SQL Editor → Run (after 0001_init.sql has already been run once).
 
 delete from public.clients;
@@ -10,7 +10,7 @@ insert into public.clients (slug, name, industry, color, logo_initials, logo_url
   'A modern business website paired with a custom AI agent for customer engagement.',
   '["Website Development","AI Agents","Chatbot & Automation"]'::jsonb,
   '[{"label":"Website","value":"Delivered"},{"label":"AI Agent","value":"Deployed"},{"label":"Support","value":"24/7"}]'::jsonb,
-  'WALSA ONLINE designed and built a modern, conversion-focused website for Elanpro and deployed a custom AI agent to handle customer queries and lead capture around the clock.',
+  'Kasshit designed and built a modern, conversion-focused website for Elanpro and deployed a custom AI agent to handle customer queries and lead capture around the clock.',
   0
 ),
 (
@@ -28,7 +28,7 @@ insert into public.clients (slug, name, industry, color, logo_initials, logo_url
   'A performance-driven website and AI agent built to support customer growth journeys.',
   '["Website Development","AI Agents","Chatbot & Automation"]'::jsonb,
   '[{"label":"Website","value":"Delivered"},{"label":"AI Agent","value":"Deployed"},{"label":"Automation","value":"Live"}]'::jsonb,
-  'StepUp partnered with WALSA ONLINE for a full website build and a dedicated AI agent that engages visitors, answers questions, and guides them toward conversion.',
+  'StepUp partnered with Kasshit for a full website build and a dedicated AI agent that engages visitors, answers questions, and guides them toward conversion.',
   2
 ),
 (
@@ -37,7 +37,7 @@ insert into public.clients (slug, name, industry, color, logo_initials, logo_url
   'Website development and an AI chatbot built to support networking & IT service inquiries.',
   '["Website Development","AI Agents","Chatbot & Automation"]'::jsonb,
   '[{"label":"Website","value":"Delivered"},{"label":"AI Chatbot","value":"Live"},{"label":"Support","value":"24/7"}]'::jsonb,
-  'WALSA ONLINE delivered a professional website for DNA Networks along with an AI chatbot that handles service inquiries and routes leads to the right team instantly.',
+  'Kasshit delivered a professional website for DNA Networks along with an AI chatbot that handles service inquiries and routes leads to the right team instantly.',
   3
 ),
 (
@@ -55,6 +55,6 @@ insert into public.clients (slug, name, industry, color, logo_initials, logo_url
   'Website development and AI booking assistants built for travel agency partners.',
   '["Website Development","AI Agents","Chatbot & Automation"]'::jsonb,
   '[{"label":"Websites","value":"Delivered"},{"label":"AI Assistant","value":"Deployed"},{"label":"Bookings","value":"Automated"}]'::jsonb,
-  'WALSA ONLINE builds websites and AI booking assistants for travel agency partners — helping travelers get instant answers and smoother booking experiences.',
+  'Kasshit builds websites and AI booking assistants for travel agency partners — helping travelers get instant answers and smoother booking experiences.',
   5
 );

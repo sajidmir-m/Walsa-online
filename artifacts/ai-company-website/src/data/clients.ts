@@ -28,7 +28,7 @@ export const clients: Client[] = [
       { label: 'Support', value: '24/7' },
     ],
     description:
-      'WALSA ONLINE designed and built a modern, conversion-focused website for Elanpro and deployed a custom AI agent to handle customer queries and lead capture around the clock.',
+      'Kasshit designed and built a modern, conversion-focused website for Elanpro and deployed a custom AI agent to handle customer queries and lead capture around the clock.',
   },
   {
     slug: 'prezrve',
@@ -62,7 +62,7 @@ export const clients: Client[] = [
       { label: 'Automation', value: 'Live' },
     ],
     description:
-      'StepUp partnered with WALSA ONLINE for a full website build and a dedicated AI agent that engages visitors, answers questions, and guides them toward conversion.',
+      'StepUp partnered with Kasshit for a full website build and a dedicated AI agent that engages visitors, answers questions, and guides them toward conversion.',
   },
   {
     slug: 'dna-networks',
@@ -79,7 +79,7 @@ export const clients: Client[] = [
       { label: 'Support', value: '24/7' },
     ],
     description:
-      'WALSA ONLINE delivered a professional website for DNA Networks along with an AI chatbot that handles service inquiries and routes leads to the right team instantly.',
+      'Kasshit delivered a professional website for DNA Networks along with an AI chatbot that handles service inquiries and routes leads to the right team instantly.',
   },
   {
     slug: 'class17',
@@ -113,6 +113,6 @@ export const clients: Client[] = [
       { label: 'Bookings', value: 'Automated' },
     ],
     description:
-      'WALSA ONLINE builds websites and AI booking assistants for travel agency partners — helping travelers get instant answers and smoother booking experiences.',
+      'Kasshit builds websites and AI booking assistants for travel agency partners — helping travelers get instant answers and smoother booking experiences.',
   },
 ];

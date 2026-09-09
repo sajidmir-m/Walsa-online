@@ -1,4 +1,4 @@
--- WALSA ONLINE — Our Work / portfolio projects
+-- Kasshit — Our Work / portfolio projects
 -- Manage from /admin/work (create, edit, delete, upload cover image).
 -- Paste this entire file into Supabase → SQL Editor → Run.
 

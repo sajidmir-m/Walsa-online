@@ -39,9 +39,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const Sidebar = (
     <aside className="w-64 shrink-0 border-r border-white/10 bg-[#050816] flex flex-col h-full">
       <div className="h-16 px-5 flex items-center gap-3 border-b border-white/10">
-        <img src="/logo.png" alt="WALSA" className="h-10 w-auto rounded" />
+        <img src="/logo.png" alt="Kasshit" className="h-10 w-auto rounded" />
         <div>
-          <div className="text-white text-sm font-semibold">WALSA Admin</div>
+          <div className="text-white text-sm font-semibold">Kasshit Admin</div>
           <div className="text-[11px] text-slate-500 truncate max-w-[140px]">{user?.email}</div>
         </div>
       </div>

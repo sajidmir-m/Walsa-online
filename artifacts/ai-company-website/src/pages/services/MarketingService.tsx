@@ -10,7 +10,7 @@ const defaultIntro = {
   badge: 'Marketing Solution',
   headline: 'Digital Marketing',
   headline_highlight: 'That Grows Brands',
-  body: "Choose a service below to see exactly what's included — Social Media, Content Creation, SEO, Ads, Strategy, and more — each managed end-to-end by WALSA ONLINE.",
+  body: "Choose a service below to see exactly what's included — Social Media, Content Creation, SEO, Ads, Strategy, and more — each managed end-to-end by Kasshit.",
 };
 
 export default function MarketingService() {
@@ -78,12 +78,12 @@ export default function MarketingService() {
 
         <div className="rounded-3xl bg-[#08111F] border border-purple-500/20 p-8 sm:p-10 mb-12">
           <h2 className="text-2xl font-bold font-display mb-4 text-white">
-            Complete Management by WALSA ONLINE
+            Complete Management by Kasshit
           </h2>
           <p className="text-slate-400 leading-relaxed max-w-3xl">
             From content planning to shooting, editing, designing, posting, advertising, optimization,
             and performance monitoring — every aspect of your digital marketing is professionally managed
-            by WALSA ONLINE, allowing you to focus on running your business while we focus on growing
+            by Kasshit, allowing you to focus on running your business while we focus on growing
             your brand.
           </p>
         </div>

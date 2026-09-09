@@ -34,7 +34,7 @@ export default function ServicesOverview() {
             <span className="block bg-gradient-to-r from-primary to-[#00FFA3] text-transparent bg-clip-text">Transform Digitally</span>
           </h1>
           <p className="text-slate-400 text-lg max-w-2xl leading-relaxed">
-            WALSA ONLINE provides complete digital transformation under one roof — from cutting-edge AI to cloud infrastructure, mobile apps, and growth marketing. Select a service to explore.
+            Kasshit provides complete digital transformation under one roof — from cutting-edge AI to cloud infrastructure, mobile apps, and growth marketing. Select a service to explore.
           </p>
         </motion.div>
 

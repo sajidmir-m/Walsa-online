@@ -46,7 +46,7 @@ export default function Queries() {
   const waLink = (q: DbQuery) => {
     const phone = (q.phone || '').replace(/\D/g, '');
     const text = encodeURIComponent(
-      `Hi ${q.name}, thanks for contacting WALSA ONLINE regarding ${q.service_interest || 'your project'}.`,
+      `Hi ${q.name}, thanks for contacting Kasshit regarding ${q.service_interest || 'your project'}.`,
     );
     return phone ? `https://wa.me/${phone}?text=${text}` : `https://wa.me/?text=${text}`;
   };

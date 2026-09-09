@@ -26,11 +26,11 @@ export default function Clients() {
         <button
           onClick={() => setLocation('/')}
           className="flex items-center group cursor-pointer bg-transparent border-none p-0 mr-6"
-          aria-label="WALSA ONLINE home"
+          aria-label="Kasshit home"
         >
           <img
             src="/logo.png"
-            alt="WALSA ONLINE"
+            alt="Kasshit"
             className="h-11 w-auto object-contain rounded-md transition-transform group-hover:scale-105 duration-300"
           />
         </button>

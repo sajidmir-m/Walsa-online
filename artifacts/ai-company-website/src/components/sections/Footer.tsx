@@ -20,7 +20,7 @@ export default function Footer() {
             <a href="#" className="inline-flex items-center group mb-6">
               <img
                 src="/logo.png"
-                alt="WALSA ONLINE"
+                alt="Kasshit"
                 className="h-14 w-auto object-contain rounded-md"
               />
             </a>
@@ -91,10 +91,10 @@ export default function Footer() {
       <div className="border-t border-white/10 bg-black/20 py-6">
         <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500">
-            © {new Date().getFullYear()} WALSA ONLINE. All rights reserved.
+            © {new Date().getFullYear()} Kasshit. All rights reserved.
           </p>
           <div className="flex items-center gap-1 text-sm text-slate-500">
-            Made with <span className="text-red-500">❤️</span> by WALSA ONLINE
+            Made with <span className="text-red-500">❤️</span> by Kasshit
           </div>
           <div className="flex items-center gap-6">
             <a href="#" className="text-sm text-slate-500 hover:text-white">Privacy Policy</a>
