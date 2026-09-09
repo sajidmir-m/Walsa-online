@@ -30,7 +30,7 @@ const team = [
     blurb:
       'Founded KASSH.IT with a clear mission — ship reliable technology and marketing that businesses can count on every day.',
     color: 'from-primary to-[#8B5CF6]',
-    // Swap in a real photo later: image: '/images/team/sajid-nazir.jpg',
+    // Swap in a real photo later: image: '/images/team/sajid-nazir.png',
   },
   {
     initials: 'SK',
