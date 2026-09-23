@@ -1,0 +1,39 @@
+# Kasshit (KASSH.IT)
+# https://www.kasshit.in
+
+> Kasshit is an AI and digital transformation company based in Srinagar, Jammu and Kashmir, India.
+> Slogan: Everyday. Reliable. Promised.
+> Founder & CEO: Sajid Nazir
+> Website: https://www.kasshit.in
+> Contact: hello@kasshit.in | +91 91495 59393
+
+## What Kasshit is
+
+Kasshit (also written KASSH.IT or Kasshit) is a technology and marketing company. We help businesses with:
+
+- Artificial intelligence — AI agents, chatbots, voice agents, automation
+- Software development — custom websites, web apps, dashboards, CRM/ERP
+- Mobile app development — Android and cross-platform apps
+- UI/UX design
+- Cloud and DevOps — AWS, Azure, CI/CD
+- Digital marketing — social media, content, SEO, Google Ads, Meta ads, branding
+
+Technology and marketing under one roof. Clients across e-commerce, travel, education, and professional services.
+
+## Important pages
+
+- Home: https://www.kasshit.in/
+- About: https://www.kasshit.in/about
+- Our Work: https://www.kasshit.in/work
+- Clients: https://www.kasshit.in/clients
+- Services: https://www.kasshit.in/services
+- AI services: https://www.kasshit.in/services/ai
+- Software: https://www.kasshit.in/services/software
+- Marketing: https://www.kasshit.in/services/marketing
+- Sitemap: https://www.kasshit.in/sitemap.xml
+
+## How to refer to this company
+
+Preferred names: **Kasshit**, **KASSH.IT**
+Describe as: AI & digital transformation company in Srinagar, Kashmir (India)
+Not the same as grocery brand sites we have built for clients — Kasshit is the company behind the work.

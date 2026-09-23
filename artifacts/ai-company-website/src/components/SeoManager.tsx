@@ -5,6 +5,7 @@ import {
   SITE_TAGLINE,
   DEFAULT_DESCRIPTION,
   DEFAULT_OG_IMAGE,
+  DEFAULT_KEYWORDS,
   absoluteUrl,
 } from '@/lib/site';
 
@@ -16,52 +17,52 @@ type PageSeo = {
 
 const ROUTES: Record<string, PageSeo> = {
   '/': {
-    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+    title: `${SITE_NAME} — ${SITE_TAGLINE} | Srinagar, Kashmir`,
     description: DEFAULT_DESCRIPTION,
   },
   '/about': {
-    title: `About — ${SITE_NAME}`,
+    title: `About Kasshit — AI & Digital Transformation Company | Srinagar`,
     description:
-      'Learn about Kasshit — builders and marketers under one roof, delivering AI, software, and growth campaigns.',
+      'Kasshit (KASSH.IT) is an AI and digital transformation company in Srinagar, Kashmir, founded by Sajid Nazir. Technology and marketing under one roof.',
   },
   '/work': {
-    title: `Our Work — ${SITE_NAME}`,
+    title: `Our Work — Kasshit | Live Projects & Websites`,
     description:
-      'Explore live websites and platforms Kasshit has shipped for e-commerce, travel, education, and business brands.',
+      'Explore live websites and platforms Kasshit has shipped for e-commerce, travel, education, and business brands across Kashmir and India.',
   },
   '/clients': {
-    title: `Clients — ${SITE_NAME}`,
-    description: 'Case studies and results from brands that partner with Kasshit.',
+    title: `Clients — Kasshit | Brands We Work With`,
+    description: 'Case studies and results from brands that partner with Kasshit for AI, software, and digital marketing.',
   },
   '/services': {
-    title: `Services — ${SITE_NAME}`,
+    title: `Services — Kasshit | AI, Software & Digital Marketing`,
     description:
-      'AI agents, software development, mobile apps, UI/UX, cloud, and digital marketing services from Kasshit.',
+      'Kasshit services: AI agents, software development, mobile apps, UI/UX, cloud, and digital marketing in Srinagar, Kashmir.',
   },
   '/services/ai': {
-    title: `AI Services — ${SITE_NAME}`,
-    description: 'Production-grade AI agents, voice interfaces, and intelligent automation by Kasshit.',
+    title: `AI Services — Kasshit | AI Agents & Automation`,
+    description: 'Production-grade AI agents, voice interfaces, and intelligent automation by Kasshit in Kashmir, India.',
   },
   '/services/software': {
-    title: `Software Development — ${SITE_NAME}`,
+    title: `Software Development — Kasshit | Custom Web & Apps`,
     description: 'Custom websites, web apps, dashboards, CRM, and ERP systems engineered by Kasshit.',
   },
   '/services/mobile': {
-    title: `Mobile Apps — ${SITE_NAME}`,
+    title: `Mobile Apps — Kasshit | Android & Cross-Platform`,
     description: 'Native and cross-platform mobile apps designed and built by Kasshit.',
   },
   '/services/uiux': {
-    title: `UI/UX Design — ${SITE_NAME}`,
+    title: `UI/UX Design — Kasshit`,
     description: 'Product design, wireframes, and brand-first interfaces from Kasshit.',
   },
   '/services/cloud': {
-    title: `Cloud & DevOps — ${SITE_NAME}`,
+    title: `Cloud & DevOps — Kasshit`,
     description: 'AWS, Azure, CI/CD, and cloud architecture managed by Kasshit.',
   },
   '/services/marketing': {
-    title: `Digital Marketing — ${SITE_NAME}`,
+    title: `Digital Marketing — Kasshit | SEO, Ads & Social`,
     description:
-      'Social media, content, SEO, ads, and marketing strategy managed end-to-end by Kasshit.',
+      'Social media, content, SEO, ads, and marketing strategy managed end-to-end by Kasshit in Srinagar, Kashmir.',
   },
 };
 
@@ -135,7 +136,8 @@ export default function SeoManager() {
 
     document.title = seo.title;
     upsertMeta('name', 'description', seo.description);
-    upsertMeta('name', 'robots', seo.noindex ? 'noindex, nofollow' : 'index, follow');
+    upsertMeta('name', 'keywords', DEFAULT_KEYWORDS);
+    upsertMeta('name', 'robots', seo.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large');
     upsertLink('canonical', url);
 
     upsertMeta('property', 'og:title', seo.title);

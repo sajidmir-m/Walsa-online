@@ -6,7 +6,9 @@ import { ArrowRight, Play } from 'lucide-react';
 import { usePageSection } from '@/lib/pageContent';
 
 const defaultHero = {
-  badge: 'Technology & Marketing, Done Right',
+  badge: 'AI & Digital Transformation Company · Srinagar, Kashmir',
+  brand_name: 'Kasshit',
+  company_line: 'An AI, software & digital marketing company',
   headline_prefix: 'We build',
   rotating_phrases: [
     'AI Agents',
@@ -16,7 +18,7 @@ const defaultHero = {
     'Mobile Apps',
   ],
   subheadline:
-    'Our engineers build the agents and software. Our marketers make sure people find you — with SEO, content, and campaigns that compound.',
+    'Kasshit (KASSH.IT) is a digital transformation company based in Srinagar, Jammu and Kashmir. Our engineers build AI agents and software. Our marketers grow brands with SEO, content, and campaigns that compound.',
   cta_primary: 'Start a Project',
   cta_secondary: 'See Our Work',
   stats: [
@@ -90,9 +92,17 @@ export default function Hero() {
               <span className="text-xs font-medium text-slate-300">{data.badge}</span>
             </motion.div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold font-display leading-[1.15] mb-4">
-              <span className="block text-white">{data.headline_prefix}</span>
-              <span className="block relative h-[1.2em] mt-0.5 overflow-hidden">
+            <h1 className="mb-4">
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-display tracking-tight text-white leading-none mb-2">
+                {data.brand_name || 'Kasshit'}
+              </span>
+              <span className="block text-sm sm:text-base text-primary font-medium tracking-wide mb-4">
+                {data.company_line || defaultHero.company_line}
+              </span>
+              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold font-display leading-[1.15] text-white">
+                {data.headline_prefix}
+              </span>
+              <span className="block relative h-[1.2em] mt-0.5 overflow-hidden text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold font-display">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={phrases[phraseIndex % phrases.length]}

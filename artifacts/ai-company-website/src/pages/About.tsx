@@ -6,9 +6,9 @@ import { usePageSection } from '@/lib/pageContent';
 
 const defaultIntro = {
   badge: 'Who We Are',
-  headline: 'Builders & Marketers,',
-  headline_highlight: 'Under One Roof',
-  body: 'Kasshit is a digital transformation company with two clear strengths: technology that ships, and marketing that grows. Our engineers build AI agents and software. Our marketers make sure the right people find you â€” with content, SEO, and campaigns that compound.',
+  headline: 'Kasshit —',
+  headline_highlight: 'AI & Digital Transformation',
+  body: 'Kasshit (KASSH.IT) is an AI and digital transformation company based in Srinagar, Jammu and Kashmir, India. Founded by Sajid Nazir. We build AI agents, custom software, mobile apps, cloud systems, and digital marketing — SEO, social media, ads, and branding — under one roof.',
 };
 
 const defaultMission = {

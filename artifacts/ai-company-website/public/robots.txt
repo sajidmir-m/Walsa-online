@@ -2,8 +2,32 @@
 User-agent: *
 Allow: /
 
+# AI / LLM crawlers — index company identity
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
 # Keep admin / auth out of search indexes
 Disallow: /admin
 Disallow: /admin/
 
 Sitemap: https://www.kasshit.in/sitemap.xml
+# Machine-readable company brief for AI assistants
+# https://www.kasshit.in/llms.txt

@@ -17,15 +17,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           
           <div className="lg:col-span-2">
-            <a href="#" className="inline-flex items-center group mb-6">
+            <a href="/" className="inline-flex items-center gap-3 group mb-6 no-underline">
               <img
                 src="/logo.png"
-                alt="KASSH.IT — Everyday. Reliable. Promised."
-                className="h-16 sm:h-20 w-auto object-contain rounded-lg bg-white"
+                alt="Kasshit — KASSH.IT"
+                className="h-14 sm:h-16 w-auto object-contain rounded-lg bg-white"
               />
+              <span className="flex flex-col leading-tight">
+                <span className="text-white font-bold font-display text-xl">Kasshit</span>
+                <span className="text-xs text-slate-400">AI & Digital Transformation</span>
+              </span>
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm mb-8">
-              {data.tagline}
+              Kasshit (KASSH.IT) is an AI and digital transformation company in Srinagar, Kashmir.
+              {data.tagline ? ` ${data.tagline}` : ''}
             </p>
             <div className="flex items-center gap-4">
               {[FaLinkedinIn, SiX, SiGithub, SiYoutube, SiInstagram].map((Icon, i) => (

@@ -163,14 +163,22 @@ export default function Navbar() {
         <div className="container mx-auto px-5 max-w-7xl flex items-center justify-between">
           <button
             onClick={(e) => handleNav(e as any, '/', true)}
-            className="flex items-center group cursor-pointer bg-transparent border-none p-0"
-            aria-label="KASSH.IT home"
+            className="flex items-center gap-3 group cursor-pointer bg-transparent border-none p-0"
+            aria-label="Kasshit home"
           >
             <img
               src="/logo.png"
-              alt="KASSH.IT — Everyday. Reliable. Promised."
-              className="h-12 md:h-16 w-auto object-contain rounded-lg bg-white transition-transform group-hover:scale-105 duration-300"
+              alt="Kasshit — KASSH.IT logo"
+              className="h-11 md:h-14 w-auto object-contain rounded-lg bg-white transition-transform group-hover:scale-105 duration-300"
             />
+            <span className="hidden sm:flex flex-col items-start text-left leading-tight">
+              <span className="text-white font-bold font-display text-lg md:text-xl tracking-tight">
+                Kasshit
+              </span>
+              <span className="text-[10px] md:text-[11px] text-slate-400 font-medium">
+                AI & Digital Transformation
+              </span>
+            </span>
           </button>
 
           {/* Desktop nav */}
